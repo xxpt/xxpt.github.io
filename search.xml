@@ -3062,7 +3062,7 @@
 </ul>
 <p>微信登录测试点:<br>1、登录成功<br>2、密码错误,登录失败</p>
 <p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720133450128.png" alt="image-20210720133450128"></p>
-<h2 id="☆☆☆测试用例☆☆☆"><a href="#☆☆☆测试用例☆☆☆" class="headerlink" title="☆☆☆测试用例☆☆☆"></a>☆☆☆测试用例☆☆☆</h2><h2 id="这几个方面看（功能、界面、性能、安全性、兼容性"><a href="#这几个方面看（功能、界面、性能、安全性、兼容性" class="headerlink" title="这几个方面看（功能、界面、性能、安全性、兼容性"></a>这几个方面看（功能、界面、性能、安全性、兼容性</h2><p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210801095511694.png" alt="image-20210801095511694"></p>
+<h2 id="☆☆☆测试用例☆☆☆"><a href="#☆☆☆测试用例☆☆☆" class="headerlink" title="☆☆☆测试用例☆☆☆"></a>☆☆☆测试用例☆☆☆</h2><h2 id="这几个方面看（功能、界面、性能、安全性、兼容性"><a href="#这几个方面看（功能、界面、性能、安全性、兼容性" class="headerlink" title="这几个方面看（功能、界面、性能、安全性、兼容性"></a>这几个方面看（功能、界面、性能、安全性、兼容性</h2><p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210801095511694.png" alt="image-20210801095511694"> </p>
 <h3 id="x3D-x3D-x3D-x3D-x3D-具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><p>But，还没有结束。如果更近一步，可以从测试手段上进行进一步的思考。<strong>你是希望测试一个矿泉水瓶呢还是一百万个？</strong>测试一个的话手动就行了。如果是一百万个？只能借助机器，用自动化的方式来实现了。再比如稳定性测试中，<strong>瓶盖是需要开启十次还是一万次</strong>？十次手动做做还可以接受，一万次扭下来估计手也要废掉了。所以必须考虑自动化。诸如此类</p>
 <h3 id="【飞书】视频会议测试用例"><a href="#【飞书】视频会议测试用例" class="headerlink" title="【飞书】视频会议测试用例"></a>【飞书】视频会议测试用例</h3><p>功能测试<br>界面测试<br>性能测试<br>兼容性测试</p>
 <p><strong>一、功能测试</strong></p>

@@ -2,8 +2,9 @@
 <search>
   <entry>
     <title>面试QA整理(1)——计算机网络</title>
-    <url>/2022/02/01/%E9%9D%A2%E8%AF%95QA%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家<del>抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享</del>）</p>
+    <url>/2022/02/01/QA_network/</url>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
+<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
 <h1 id="面试QA整理-1-——计算机网络"><a href="#面试QA整理-1-——计算机网络" class="headerlink" title="面试QA整理(1)——计算机网络"></a>面试QA整理(1)——计算机网络</h1><h2 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h2><h3 id="请你来说一说http协议"><a href="#请你来说一说http协议" class="headerlink" title="请你来说一说http协议"></a>请你来说一说http协议</h3><p>HTTP (Hyper Text Transfer Protocol,超文本传输协议)</p>
 <p>是用于web服务器和本地浏览器之间传输文件的传输协议，</p>
 <p>是一个基于请求与响应模式的、无状态的、应用层的协议，</p>
@@ -424,7 +425,7 @@
 <p><strong>更安全的传输协议</strong><br>TCP 协议头部没有经过任何加密和认证，所以在传输过程中很容易被中间网络设备篡改，注入和窃听。比如修改序列号、滑动窗口。这些行为有可能是出于性能优化，也有可能是主动攻击。</p>
 <p>但是 QUIC 的 packet 可以说是武装到了牙齿。除了个别报文比如 PUBLIC_RESET 和 CHLO，所有报文头部都是经过认证的，报文 Body 都是经过加密的。</p>
 <p>这样只要对 QUIC 报文任何修改，接收端都能够及时发现，有效地降低了安全风险。</p>
-<p><strong>QUIC****面临的挑战</strong></p>
+<p><strong>QUIC面临的挑战</strong></p>
 <p>1.路由封杀UDP 443端口（ 这正是QUIC 部署的端口）</p>
 <p>2.UDP包过多，由于QS限定，会被服务商误认为是攻击，UDP包被丢弃</p>
 <p>3.无论是路由器还是防火墙目前对QUIC都还没有做好准备。</p>

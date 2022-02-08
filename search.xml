@@ -3,8 +3,18 @@
   <entry>
     <title>面试QA整理(1)——计算机网络</title>
     <url>/2022/02/01/QA_network/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-1-——计算机网络"><a href="#面试QA整理-1-——计算机网络" class="headerlink" title="面试QA整理(1)——计算机网络"></a>面试QA整理(1)——计算机网络</h1><h2 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h2><h3 id="请你来说一说http协议"><a href="#请你来说一说http协议" class="headerlink" title="请你来说一说http协议"></a>请你来说一说http协议</h3><p>HTTP (Hyper Text Transfer Protocol,超文本传输协议)</p>
 <p>是用于web服务器和本地浏览器之间传输文件的传输协议，</p>
 <p>是一个基于请求与响应模式的、无状态的、应用层的协议，</p>
@@ -674,8 +684,18 @@
   <entry>
     <title>面试QA整理(2)——操作系统</title>
     <url>/2022/02/02/QA_os/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-2-——操作系统"><a href="#面试QA整理-2-——操作系统" class="headerlink" title="面试QA整理(2)——操作系统"></a>面试QA整理(2)——操作系统</h1><h2 id="进程、线程的区别"><a href="#进程、线程的区别" class="headerlink" title="进程、线程的区别"></a>进程、线程的区别</h2><p>区别：</p>
 <p>1.<strong>一个线程只能属于一个进程，而一个进程可以有多个线程</strong>，但至少有一个线程。线程依赖于进程而存在。</p>
 <p>2.<strong>进程在执行过程中拥有独立的内存单元，而多个线程共享进程的内存。</strong>（资源分配给进程，同一进程的所有线程共享该进程的所有资源。同一进程中的多个线程共享代码段（代码和常量），数据段（全局变量和静态变量），扩展段（堆存储）。但是<strong>每个线程拥有自己的栈</strong>段，栈段又叫运行时段，用来存放所有局部变量和临时变量。）</p>
@@ -801,8 +821,18 @@
   <entry>
     <title>面试QA整理(4)——数据结构</title>
     <url>/2022/02/04/QA_datastructure/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-4-——数据结构"><a href="#面试QA整理-4-——数据结构" class="headerlink" title="面试QA整理(4)——数据结构"></a>面试QA整理(4)——数据结构</h1><h2 id="数组和链表的区别，优缺点"><a href="#数组和链表的区别，优缺点" class="headerlink" title="数组和链表的区别，优缺点"></a>数组和链表的区别，优缺点</h2><p><strong>数组的特点：</strong>元素<strong>增删慢，查找快</strong></p>
 <ul>
 <li><p>数组将元素在<strong>内存中连续存放</strong>，由于每个元素占用内存相同，可以<strong>通过下标迅速访问数组中任何元素</strong>。  </p>
@@ -1005,8 +1035,18 @@
   <entry>
     <title>面试QA整理(6)——java</title>
     <url>/2022/02/06/QA_java/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-6-——java"><a href="#面试QA整理-6-——java" class="headerlink" title="面试QA整理(6)——java"></a>面试QA整理(6)——java</h1><p>面试官会问你熟悉的语言，我一般都说python，有些面试还会问些java，这里整理的比较少。</p>
 <h2 id="面向对象的三大特征：封装性、继承性、多态性。"><a href="#面向对象的三大特征：封装性、继承性、多态性。" class="headerlink" title="面向对象的三大特征：封装性、继承性、多态性。"></a>面向对象的三大特征：封装性、继承性、多态性。</h2><p>封装性在Java当中的体现:</p>
 <ul>
@@ -1152,12 +1192,22 @@
   <entry>
     <title>面试QA整理(7)——linux</title>
     <url>/2022/02/07/QA_linux/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-7-——linux"><a href="#面试QA整理-7-——linux" class="headerlink" title="面试QA整理(7)——linux"></a>面试QA整理(7)——linux</h1><h2 id="常用linux命令"><a href="#常用linux命令" class="headerlink" title="常用linux命令"></a>常用linux命令</h2><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720191224771.png" alt="image-20210720191224771" style="zoom:50%;" />
 
 <p><strong>1、环境部署</strong><br><strong>①远程连接服务器操作(客户端连接服务器)</strong></p>
-<p>ssh <a href="mailto:&#114;&#111;&#x6f;&#116;&#x40;&#x33;&#57;&#x2e;&#49;&#50;&#x33;&#x2e;&#49;&#50;&#x34;&#46;&#x39;&#x39;">&#114;&#111;&#x6f;&#116;&#x40;&#x33;&#57;&#x2e;&#49;&#50;&#x33;&#x2e;&#49;&#50;&#x34;&#46;&#x39;&#x39;</a></p>
+<p>ssh <a href="mailto:&#114;&#x6f;&#x6f;&#116;&#64;&#51;&#57;&#x2e;&#49;&#50;&#x33;&#x2e;&#49;&#50;&#x34;&#46;&#x39;&#57;">&#114;&#x6f;&#x6f;&#116;&#64;&#51;&#57;&#x2e;&#49;&#50;&#x33;&#x2e;&#49;&#50;&#x34;&#46;&#x39;&#57;</a></p>
 <p>Xshell、VScode</p>
 <p><strong>②常用命令(查看目录内容Is命令、当前工作目录pwd、切换工作目录cd、创建目录mkdir、</strong><br><strong>③文件操作(创建文件touch 、复制cp、移动mv重命名、删除rm  )</strong><br><strong>④压缩操作(解压)</strong></p>
 <p><strong>文件压缩解压： zip、 unzip</strong>  </p>
@@ -1363,7 +1413,7 @@
     <url>/2022/02/08/QA_code/</url>
     <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
 <p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
-<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^）</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
 <p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
 <ul>
 <li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
@@ -1393,7 +1443,7 @@
 
 
 
-<h2 id="飞书-【反转链表】"><a href="#飞书-【反转链表】" class="headerlink" title="飞书-【反转链表】"></a>飞书-【反转链表】</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">head</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    pre = <span class="literal">None</span></span><br><span class="line">    cur = head</span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        temp = cur.<span class="built_in">next</span></span><br><span class="line">        cur.<span class="built_in">next</span> = pre</span><br><span class="line">        pre = cur</span><br><span class="line">        cur = temp</span><br><span class="line">    <span class="keyword">return</span>  <span class="comment">#!!!!!!!!!return的是pre，头节点！！！！</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">head = ListNode(<span class="number">1</span>)</span><br><span class="line">head.<span class="built_in">next</span> = ListNode(<span class="number">2</span>)</span><br><span class="line">head.<span class="built_in">next</span>.<span class="built_in">next</span> = ListNode(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">p = reverseList(head)</span><br><span class="line"><span class="keyword">while</span> p:</span><br><span class="line">    <span class="built_in">print</span>(p.val)</span><br><span class="line">    p = p.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+<h2 id="【反转链表】"><a href="#【反转链表】" class="headerlink" title="【反转链表】"></a>【反转链表】</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">reverseList</span>(<span class="params">head</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    pre = <span class="literal">None</span></span><br><span class="line">    cur = head</span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        temp = cur.<span class="built_in">next</span></span><br><span class="line">        cur.<span class="built_in">next</span> = pre</span><br><span class="line">        pre = cur</span><br><span class="line">        cur = temp</span><br><span class="line">    <span class="keyword">return</span>  <span class="comment">#!!!!!!!!!return的是pre，头节点！！！！</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">head = ListNode(<span class="number">1</span>)</span><br><span class="line">head.<span class="built_in">next</span> = ListNode(<span class="number">2</span>)</span><br><span class="line">head.<span class="built_in">next</span>.<span class="built_in">next</span> = ListNode(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">p = reverseList(head)</span><br><span class="line"><span class="keyword">while</span> p:</span><br><span class="line">    <span class="built_in">print</span>(p.val)</span><br><span class="line">    p = p.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
 
 <img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210729205839131.png" alt="image-20210729205839131" style="zoom:33%;" />
 
@@ -1440,7 +1490,7 @@
 <p> n是不是有效的</p>
 <p>{1},1，{1,2},2 特殊情况，要删除的是头节点 </p>
 <p>{1,2},1 </p>
-<h2 id="飞书-【链表中的节点每k个一组翻转】"><a href="#飞书-【链表中的节点每k个一组翻转】" class="headerlink" title="飞书-【链表中的节点每k个一组翻转】"></a>飞书-【链表中的节点每k个一组翻转】</h2><p>将给出的链表中的节点每k个一组翻转，返回翻转后的链表<br>如果链表中的节点数不是k的倍数，将最后剩下的节点保持原样<br>你不能更改节点中的值，只能更改节点本身。<br>要求空间复杂度O(1)<br><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210730203808003.png" alt="image-20210730203808003" style="zoom:67%;" /><br>用栈，我们把 k 个数压入栈中，然后弹出来的顺序就是翻转的！<br>这里要注意几个问题：<br>第一，剩下的链表个数够不够 k 个（因为不够 k 个不用翻转）；<br>第二，已经翻转的部分要与剩下链表连接起来。</p>
+<h2 id="【链表中的节点每k个一组翻转】"><a href="#【链表中的节点每k个一组翻转】" class="headerlink" title="【链表中的节点每k个一组翻转】"></a>【链表中的节点每k个一组翻转】</h2><p>将给出的链表中的节点每k个一组翻转，返回翻转后的链表<br>如果链表中的节点数不是k的倍数，将最后剩下的节点保持原样<br>你不能更改节点中的值，只能更改节点本身。<br>要求空间复杂度O(1)<br><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210730203808003.png" alt="image-20210730203808003" style="zoom:67%;" /><br>用栈，我们把 k 个数压入栈中，然后弹出来的顺序就是翻转的！<br>这里要注意几个问题：<br>第一，剩下的链表个数够不够 k 个（因为不够 k 个不用翻转）；<br>第二，已经翻转的部分要与剩下链表连接起来。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">reverseKGroup</span>(<span class="params">head, k</span>):</span><br><span class="line">    root = ListNode(<span class="literal">None</span>)</span><br><span class="line">    p = root</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        count = k</span><br><span class="line">        stack = []</span><br><span class="line">        temp = head</span><br><span class="line">        <span class="keyword">while</span> count <span class="keyword">and</span> temp:</span><br><span class="line">            stack.append(temp)</span><br><span class="line">            temp = temp.<span class="built_in">next</span></span><br><span class="line">            count -= <span class="number">1</span></span><br><span class="line">        <span class="comment"># 如果count没能减完，temp就空了，说明不够k个，就不翻转了跳出去</span></span><br><span class="line">        <span class="keyword">if</span> count:</span><br><span class="line">            p.<span class="built_in">next</span> = head</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="comment"># 如果够k个，这时候temp已经指向第k+1个节点</span></span><br><span class="line">        <span class="comment"># 翻转</span></span><br><span class="line">        <span class="keyword">while</span> stack:</span><br><span class="line">            p.<span class="built_in">next</span> = stack.pop()</span><br><span class="line">            p = p.<span class="built_in">next</span></span><br><span class="line">        p.<span class="built_in">next</span> = temp  <span class="comment"># 跟剩下的链表temp连接起来</span></span><br><span class="line">        head = temp  <span class="comment"># 把剩下的链表temp给head,继续下一轮翻转</span></span><br><span class="line">    <span class="keyword">return</span> root.<span class="built_in">next</span>  <span class="comment"># 因为首个是None,所以返回root.next</span></span><br><span class="line"><span class="comment">#test</span></span><br><span class="line">head = ListNode(<span class="number">1</span>)</span><br><span class="line">head.<span class="built_in">next</span> = ListNode(<span class="number">2</span>)</span><br><span class="line">head.<span class="built_in">next</span>.<span class="built_in">next</span> = ListNode(<span class="number">3</span>)</span><br><span class="line">head.<span class="built_in">next</span>.<span class="built_in">next</span>.<span class="built_in">next</span> = ListNode(<span class="number">4</span>)</span><br><span class="line">head.<span class="built_in">next</span>.<span class="built_in">next</span>.<span class="built_in">next</span>.<span class="built_in">next</span> = ListNode(<span class="number">5</span>)</span><br><span class="line">p = reverseKGroup(head, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">while</span> p:</span><br><span class="line">    <span class="built_in">print</span>(p.val)</span><br><span class="line">    p = p.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="二叉树转双向链表"><a href="#二叉树转双向链表" class="headerlink" title="二叉树转双向链表"></a>二叉树转双向链表</h2><p>二叉搜索树将 二叉搜索树 转换成一个 “排序的循环双向链表” ，其中包含三个要素：</p>
@@ -1647,7 +1697,7 @@
 
 <h2 id="【字符串前缀和后缀搜索】"><a href="#【字符串前缀和后缀搜索】" class="headerlink" title="【字符串前缀和后缀搜索】"></a>【字符串前缀和后缀搜索】</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WordFilter</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, words</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type words: List[str]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.a=&#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> ind,i <span class="keyword">in</span> <span class="built_in">enumerate</span>(words):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(i)+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(i)+<span class="number">1</span>):</span><br><span class="line">                    now=i[:j]+<span class="string">&#x27;$&#x27;</span>+i[k:]</span><br><span class="line">                    self.a[now]=ind</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">self, prefix, suffix</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type prefix: str</span></span><br><span class="line"><span class="string">        :type suffix: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        k=prefix+<span class="string">&#x27;$&#x27;</span>+suffix</span><br><span class="line">        <span class="keyword">return</span> self.a.get(k,-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Your WordFilter object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = WordFilter(words)</span></span><br><span class="line"><span class="comment"># param_1 = obj.f(prefix,suffix)</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="飞书-【模拟键盘，只有a-z-26个英文字母的输入键-有两个按键坏了】"><a href="#飞书-【模拟键盘，只有a-z-26个英文字母的输入键-有两个按键坏了】" class="headerlink" title="飞书-【模拟键盘，只有a-z 26个英文字母的输入键,有两个按键坏了】"></a>飞书-【模拟键盘，只有a-z 26个英文字母的输入键,有两个按键坏了】</h2><p>题目：有一个键盘，只有a-z 26个英文字母的输入键， 现在发现有两个按键坏了，按下会发生特定的结果<br><strong>按下i键&#x3D;退格</strong>，会消除掉上一个输入字母<br><strong>按下o键&#x3D;撤回</strong>，会撤销掉上一步的操作<br>要求实现一个方法，模拟键盘的输出逻辑</p>
+<h2 id="【模拟键盘，只有a-z-26个英文字母的输入键-有两个按键坏了】"><a href="#【模拟键盘，只有a-z-26个英文字母的输入键-有两个按键坏了】" class="headerlink" title="【模拟键盘，只有a-z 26个英文字母的输入键,有两个按键坏了】"></a>【模拟键盘，只有a-z 26个英文字母的输入键,有两个按键坏了】</h2><p>题目：有一个键盘，只有a-z 26个英文字母的输入键， 现在发现有两个按键坏了，按下会发生特定的结果<br><strong>按下i键&#x3D;退格</strong>，会消除掉上一个输入字母<br><strong>按下o键&#x3D;撤回</strong>，会撤销掉上一步的操作<br>要求实现一个方法，模拟键盘的输出逻辑</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">words</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line">    result = []  <span class="comment"># 存最终输入</span></span><br><span class="line">    temp_copy = []  <span class="comment"># 拷贝一份数据，防止要撤回操作</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">str</span>):</span><br><span class="line">        <span class="keyword">if</span> ch[<span class="number">1</span>] == <span class="string">&#x27;i&#x27;</span>:  <span class="comment"># 按下i键=退格，会消除掉上一个输入字母</span></span><br><span class="line">            temp_copy = result.copy()  <span class="comment"># 拷贝数组</span></span><br><span class="line">            result.pop()</span><br><span class="line">        <span class="keyword">elif</span> ch[<span class="number">1</span>] == <span class="string">&#x27;o&#x27;</span>:  <span class="comment"># 按下o键=撤回，会撤销掉上一步的操作</span></span><br><span class="line">            result, temp_copy = temp_copy, result</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            temp_copy = result.copy()</span><br><span class="line">            result.append(ch[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(result)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(words(<span class="string">&#x27;asddiio&#x27;</span>))</span><br><span class="line"><span class="comment"># (0, &#x27;a&#x27;)——ch[0]指的是0，ch[1]指的是&#x27;a&#x27;</span></span><br><span class="line"><span class="comment"># (1, &#x27;s&#x27;)</span></span><br><span class="line"><span class="comment"># (2, &#x27;d&#x27;)</span></span><br><span class="line"><span class="comment"># (3, &#x27;d&#x27;)</span></span><br><span class="line"><span class="comment"># (4, &#x27;i&#x27;)</span></span><br><span class="line"><span class="comment"># (5, &#x27;i&#x27;)</span></span><br><span class="line"><span class="comment"># (6, &#x27;o&#x27;)</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="飞书-【下一个排列】输出给定数字下一个比它大的数字排列"><a href="#飞书-【下一个排列】输出给定数字下一个比它大的数字排列" class="headerlink" title="飞书-【下一个排列】输出给定数字下一个比它大的数字排列"></a>飞书-【下一个排列】输出给定数字下一个比它大的数字排列</h2><p>实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中<strong>下一个更大</strong>的排列。</p>
@@ -1675,8 +1725,18 @@
   <entry>
     <title>面试QA整理(5)——python</title>
     <url>/2022/02/05/QA_python/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-5-——python"><a href="#面试QA整理-5-——python" class="headerlink" title="面试QA整理(5)——python"></a>面试QA整理(5)——python</h1><h2 id="python常使用的方法或模块"><a href="#python常使用的方法或模块" class="headerlink" title="python常使用的方法或模块"></a>python常使用的方法或模块</h2><p>因为我研究生研究方向是深度学习，所以问了下常使用的方法或模块。</p>
 <p><strong>os常用方法：</strong></p>
 <p>os.path.isfile()和os.path.isdir()函数分别检验给出的路径是一个文件还是目录。</p>
@@ -2103,8 +2163,18 @@
   <entry>
     <title>面试QA整理(3)——数据库</title>
     <url>/2022/02/03/QA_database/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-3-——数据库"><a href="#面试QA整理-3-——数据库" class="headerlink" title="面试QA整理(3)——数据库"></a>面试QA整理(3)——数据库</h1><h2 id="基于MySQL数据库的几种连接查询-内连接、外连接-join"><a href="#基于MySQL数据库的几种连接查询-内连接、外连接-join" class="headerlink" title="基于MySQL数据库的几种连接查询(内连接、外连接 join)"></a>基于MySQL数据库的几种连接查询(内连接、外连接 join)</h2><p>内连接、外连接（ 左(外)连接、右(外)连接、全(外)连接）。</p>
 <p>内连接、左连接（左外连接）、右连接（右外连接）、全连接（全外连接）</p>
 <ul>
@@ -2863,8 +2933,18 @@
   <entry>
     <title>面试QA整理(9)——测试开发相关知识</title>
     <url>/2022/02/09/QA_test/</url>
-    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！抓住提前批免笔试的机会！冲冲冲<br>（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会再分享^_^）</p>
-<p>文章还未精细整理，如存在错误之处，可以邮件or微信反馈我呀，感激不尽！</p>
+    <content><![CDATA[<p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
 <h1 id="面试QA整理-9-——测试开发相关知识"><a href="#面试QA整理-9-——测试开发相关知识" class="headerlink" title="面试QA整理(9)——测试开发相关知识"></a>面试QA整理(9)——测试开发相关知识</h1><h2 id="测试流程—-软件生命周期-（六个阶段-计划-x2F-需求-x2F-设计-x2F-编码-x2F-测试-x2F-运行与维护"><a href="#测试流程—-软件生命周期-（六个阶段-计划-x2F-需求-x2F-设计-x2F-编码-x2F-测试-x2F-运行与维护" class="headerlink" title="测试流程—-软件生命周期 （六个阶段:计划&#x2F;需求&#x2F;设计&#x2F;编码&#x2F;测试&#x2F;运行与维护)"></a>测试流程—-软件生命周期 （六个阶段:计划&#x2F;需求&#x2F;设计&#x2F;编码&#x2F;测试&#x2F;运行与维护)</h2><p><strong>软件生命周期的六个阶段：</strong></p>
 <p><strong>计划阶段（planning）-〉需求分析（requirement）-〉软件设计阶段（design）-〉编码（coding）-&gt;测试（testing）-&gt;运行与维护（running maintrnacne）</strong>（集成-实施-交付）</p>
 <p><strong>测试里面还可以细分：单元测试、集成测试、系统测试、验收测试(Alpha、Beta)、回归测试</strong></p>

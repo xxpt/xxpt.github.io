@@ -4583,4 +4583,27 @@
         <category>测试开发</category>
       </categories>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2022/02/09/txy/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>使用Github.io搭建自己的博客时可能会遇到访问速度不理想的情况，可以采用如下几种方案解决：</p>
+<ol>
+<li>将Hexo部署到<a href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=q7cdej5p">阿里云</a>（<a href="https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=q7cdej5p">点击查看</a>），直接访问阿里云，但这种方式会暴露自己服务器的ip，存在安全隐患，服务器的带宽也不一定能满足需求，可以参考<a href="https://zhuanlan.zhihu.com/p/58654392">https://zhuanlan.zhihu.com/p/58654392</a>，做完后要对<code> /home/git/hexo/hooks/post-receive</code>文件增加可执行权限</li>
+<li>采用<a href="https://gitee.com/">Gitee</a>，速度有保证，但现在个人版不能自定义域名</li>
+<li>采用Github.io，配置<a href="https://curl.qcloud.com/GBzCe7gA">腾讯云CDN</a>，新手可以获得六个月，每月20G的免费CDN流量。</li>
+</ol>
+<h3 id="CDN配置"><a href="#CDN配置" class="headerlink" title="CDN配置"></a>CDN配置</h3><p>假定你已经安装网上教程配置好了Hexo等步骤</p>
+<ol>
+<li><p>执行完<code>hexo d -g</code>后，在仓库中配置 Pages，参考<a href="https://sspai.com/post/54608">https://sspai.com/post/54608</a>，<strong>注意</strong>不要配置自定义域名，要在腾讯云CDN中配置。</p>
+</li>
+<li><p>此时你应该可以访问你的github.io页面了，例如：<a href="https://liu-hx.github.io/">https://liu-hx.github.io/</a>这种形式的</p>
+</li>
+<li><p>腾讯云CDN主要配置host和域名即可，参考下图<br><img src="https://img-blog.csdnimg.cn/603ce85b887944e8a5d54ac8f2996115.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAaGF0YWtlLjE4,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+</li>
+<li><p>域名设置解析<br><img src="https://img-blog.csdnimg.cn/cc544eeb680b4e19bf57f9cae47ab408.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAaGF0YWtlLjE4,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>两条，分别对应境外和境内</p>
+</li>
+</ol>
+<p>现在分别访问<a href="https://liu-hx.github.io/">https://liu-hx.github.io/</a> 和 <a href="https://xpt.hatake18.top/">https://xpt.hatake18.top/</a>应该都可以访问你的网站了，cdn的缘故，第二个可能更新的较慢，需要自己设置</p>
+]]></content>
+  </entry>
 </search>

@@ -65,7 +65,7 @@ function forbidden_control() {
         document.onkeydown = function (e) {
             if (123 == e.keyCode || (e.ctrlKey && e.shiftKey && (74 === e.keyCode || 73 === e.keyCode || 67 === e.keyCode)) || (e.ctrlKey && 85 === e.keyCode)) return $.message({
                 message: "采用本站js及css请注明来源，禁止商业使用！",
-                title: "你真坏，不能打开控制台喔!",
+                title: "不能打开控制台喔!",
                 type: "error",
                 autoHide: !1,
                 time: "3000"

@@ -1207,7 +1207,7 @@
 <h1 id="面试QA整理-7-——linux"><a href="#面试QA整理-7-——linux" class="headerlink" title="面试QA整理(7)——linux"></a>面试QA整理(7)——linux</h1><h2 id="常用linux命令"><a href="#常用linux命令" class="headerlink" title="常用linux命令"></a>常用linux命令</h2><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720191224771.png" alt="image-20210720191224771" style="zoom:50%;" />
 
 <p><strong>1、环境部署</strong><br><strong>①远程连接服务器操作(客户端连接服务器)</strong></p>
-<p>ssh <a href="mailto:&#x72;&#x6f;&#x6f;&#116;&#64;&#51;&#x39;&#x2e;&#x31;&#50;&#x33;&#46;&#x31;&#x32;&#52;&#x2e;&#57;&#57;">&#x72;&#x6f;&#x6f;&#116;&#64;&#51;&#x39;&#x2e;&#x31;&#50;&#x33;&#46;&#x31;&#x32;&#52;&#x2e;&#57;&#57;</a></p>
+<p>ssh <a href="mailto:&#x72;&#x6f;&#x6f;&#116;&#64;&#x33;&#x39;&#x2e;&#49;&#x32;&#51;&#x2e;&#49;&#50;&#52;&#46;&#57;&#57;">&#x72;&#x6f;&#x6f;&#116;&#64;&#x33;&#x39;&#x2e;&#49;&#x32;&#51;&#x2e;&#49;&#50;&#52;&#46;&#57;&#57;</a></p>
 <p>Xshell、VScode</p>
 <p><strong>②常用命令(查看目录内容Is命令、当前工作目录pwd、切换工作目录cd、创建目录mkdir、</strong><br><strong>③文件操作(创建文件touch 、复制cp、移动mv重命名、删除rm  )</strong><br><strong>④压缩操作(解压)</strong></p>
 <p><strong>文件压缩解压： zip、 unzip</strong>  </p>

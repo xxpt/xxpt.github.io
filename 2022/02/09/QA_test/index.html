@@ -1,0 +1,1813 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>面试QA整理(9)——测试开发相关知识 | 夏普通</title><meta name="author" content="xpt"><meta name="copyright" content="xpt"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！ 文档分享的初衷是给师弟师妹们作为参考，主要是适合想去大厂+测试开发岗的朋友们。建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！文章还未精细整理，如存在错误之处，可以邮件or微信or评论反馈给我呀，感激不尽！ 想进大厂，要抓住提前批免笔试的机会！（例如京东、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试QA整理(9)——测试开发相关知识">
+<meta property="og:url" content="https://xpt.hatake18.top/2022/02/09/QA_test/index.html">
+<meta property="og:site_name" content="夏普通">
+<meta property="og:description" content="Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！ 文档分享的初衷是给师弟师妹们作为参考，主要是适合想去大厂+测试开发岗的朋友们。建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！文章还未精细整理，如存在错误之处，可以邮件or微信or评论反馈给我呀，感激不尽！ 想进大厂，要抓住提前批免笔试的机会！（例如京东、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_test_cover_.png">
+<meta property="article:published_time" content="2022-02-09T03:30:00.000Z">
+<meta property="article:modified_time" content="2022-02-11T05:37:31.830Z">
+<meta property="article:author" content="xpt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_test_cover_.png"><link rel="shortcut icon" href="/img/xpt.jpg"><link rel="canonical" href="https://xpt.hatake18.top/2022/02/09/QA_test/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: xpt","link":"链接: ","source":"来源: 夏普通","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试QA整理(9)——测试开发相关知识',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-11 13:37:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script async src="/js/busuanzi.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/css/function.min.css"><meta name="generator" content="Hexo 6.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/xpt.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_test_cover_.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">夏普通</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试QA整理(9)——测试开发相关知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-09T03:30:00.000Z" title="发表于 2022-02-09 11:30:00">2022-02-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-11T05:37:31.830Z" title="更新于 2022-02-11 13:37:31">2022-02-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91/">测试开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">36.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>106分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试QA整理(9)——测试开发相关知识"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/02/09/QA_test/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2022/02/09/QA_test/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Welcome to xpt’s blog! 2021年准备秋招期间整理的一些笔记，分享给大家！</p>
+<p>文档分享的初衷是给师弟师妹们作为参考，主要是适合想去<strong>大厂+测试开发岗</strong>的朋友们。<br>建议大家自己整理文档，把我的文档作为参考，有些东西自己整理，自己去写出来，才是最适合你自己的！<br>文章还未精细整理，如存在错误之处，可以<strong>邮件or微信or评论</strong>反馈给我呀，感激不尽！</p>
+<p>想进大厂，要抓住提前批免笔试的机会！（例如京东、字节、百度等报名时间一般为七月，面试时间为报名后的一周内，面试一般为3轮，面试相关经验后续我会单独再写blog分享^_^，也欢迎大家来跟我talk，一定知无不言。）</p>
+<p>本人情况：普通211、研究生、有京东、百度、以及字节提前批测开岗offer。7月初开始准备，准备太迟，一边准备一边投简历+面试。</p>
+<ul>
+<li>投递简历时间：京东（7.14），字节（7.30），百度（7.30）</li>
+<li>三轮面试时间：京东（7.21-7.22-7.26），字节（8.4-8.6-8.9），百度（8.9-8.12-8.16）</li>
+<li>意向书时间：京东（8.12），字节（8.16），百度（9.9）</li>
+</ul>
+<p>京东提前批开始很早，我投的时候已经是第二批。经过京东几轮面试，熟悉了面试流程，大概掌握了测开岗会问些什么问题。<br>字节和百度提前批我是在ddl前一天投递，其实已经算很迟了，hc不多了。<br><strong>投递要趁早，很多岗位有固定hc。</strong><br><strong>多拿offer，才有谈薪资的底气。</strong></p>
+<p>我面试的岗位有以下：<br>1、测试开发岗（京东、百度、以及字节提前批）<br>2、银行java开发岗（所以我会整理一点java，银行问的都很简单，所以我这里对java的整理比较少）</p>
+<p>整理的内容均来源于历年网络上分享的面经（主要来源于牛客），以及我面试时被问过的问题，list如下：<br>(1)——<a href="https://xpt.hatake18.top/2022/02/01/QA_network/">计算机网络</a><br>(2)——<a href="https://xpt.hatake18.top/2022/02/02/QA_os/">操作系统</a><br>(3)——<a href="https://xpt.hatake18.top/2022/02/03/QA_database/">数据库</a><br>(4)——<a href="https://xpt.hatake18.top/2022/02/04/QA_datastructure/">数据结构</a><br>(5)——<a href="https://xpt.hatake18.top/2022/02/05/QA_python/">python</a><br>(6)——<a href="https://xpt.hatake18.top/2022/02/06/QA_java/">java</a><br>(7)——<a href="https://xpt.hatake18.top/2022/02/07/QA_linux/">linux</a><br>(8)——<a href="https://xpt.hatake18.top/2022/02/08/QA_code/">常考编程题</a><br>(9)——<a href="https://xpt.hatake18.top/2022/02/09/QA_test/">测试开发相关知识</a></p>
+<h1 id="面试QA整理-9-——测试开发相关知识"><a href="#面试QA整理-9-——测试开发相关知识" class="headerlink" title="面试QA整理(9)——测试开发相关知识"></a>面试QA整理(9)——测试开发相关知识</h1><h2 id="测试流程—-软件生命周期-（六个阶段-计划-x2F-需求-x2F-设计-x2F-编码-x2F-测试-x2F-运行与维护"><a href="#测试流程—-软件生命周期-（六个阶段-计划-x2F-需求-x2F-设计-x2F-编码-x2F-测试-x2F-运行与维护" class="headerlink" title="测试流程—-软件生命周期 （六个阶段:计划&#x2F;需求&#x2F;设计&#x2F;编码&#x2F;测试&#x2F;运行与维护)"></a>测试流程—-软件生命周期 （六个阶段:计划&#x2F;需求&#x2F;设计&#x2F;编码&#x2F;测试&#x2F;运行与维护)</h2><p><strong>软件生命周期的六个阶段：</strong></p>
+<p><strong>计划阶段（planning）-〉需求分析（requirement）-〉软件设计阶段（design）-〉编码（coding）-&gt;测试（testing）-&gt;运行与维护（running maintrnacne）</strong>（集成-实施-交付）</p>
+<p><strong>测试里面还可以细分：单元测试、集成测试、系统测试、验收测试(Alpha、Beta)、回归测试</strong></p>
+<p>一、问题定义及规划阶段<br>主要确定软件的开发目的及其<strong>可行性</strong>，制定开发计划</p>
+<p>此轮是软件开发人员和需求方之间的探讨，以此<strong>确认软件开发目标和可行性</strong>。</p>
+<p>二、需求分析&#x2F;评审阶段<br>分析来源（原型图&#x2F;软件需求说明书）、参与人员（主持–产品经理，其他参与、研发、设计、测试）、关注一个问题–<strong>测试参与这个需求分析的目的是什么？（知己知彼、方便提出疑问）</strong></p>
+<p>在确定软件开发可行的情况下，将<strong>对软件需要实现的每个功能进行详细分析</strong>。</p>
+<p>需求分析阶段是非常重要的阶段。这个阶段做得很好，将为整个软件开发项目的成功奠定良好的基础。</p>
+<p>三、软件设计阶段（属性：属于开发的工作）</p>
+<p>在此阶段，将根据需求分析的结果来设计整个软件系统，例如系统框架设计，数据库设计等。软件设计一般分为总体设计和详细设计。</p>
+<p>总体设计：总体架构     、、、概要设计（数据库 表 等框架性的东西）</p>
+<p>详细设计(LLD)：每个模块的设计、、、、、、详细设计（伪代码级别）</p>
+<p>四、软件编码阶段<br>开发人员任务、程序员编码</p>
+<p>五、软件测试阶段<br>测试工程师的任务或开发的任务</p>
+<p>开发：单元测试、<br>开发or测试：集成测试—接口测试<br>测试人员：系统测试、<br>客户or产品经理：验收测试—Alpha测试、Beta测试</p>
+<p>六、软件运行维护阶段<br>版本、产品上线（版本的升级改进）BUG的修复</p>
+<h2 id="单元测试、集成测试、系统测试、验收测试-Alpha、Beta-、回归测试"><a href="#单元测试、集成测试、系统测试、验收测试-Alpha、Beta-、回归测试" class="headerlink" title="单元测试、集成测试、系统测试、验收测试(Alpha、Beta)、回归测试"></a>单元测试、集成测试、系统测试、验收测试(Alpha、Beta)、回归测试</h2><p>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/questionTerminal/edeb39cdb48346f780b2b8cc99e48059">https://www.nowcoder.com/questionTerminal/edeb39cdb48346f780b2b8cc99e48059</a><br>来源：牛客网</p>
+<h3 id="请你分别介绍一下单元测试、集成测试、系统测试、验收测试、回归测试"><a href="#请你分别介绍一下单元测试、集成测试、系统测试、验收测试、回归测试" class="headerlink" title="请你分别介绍一下单元测试、集成测试、系统测试、验收测试、回归测试"></a><strong>请你分别介绍一下单元测试、集成测试、系统测试、验收测试、回归测试</strong></h3><p><strong>单元测试</strong>：单元测试就是最初的白盒测试，测试编码是否符合设计要求。软件中最小的测试单元，比如java中的一个方法。相关单元测试放在一起就是一个模块。 </p>
+<p><strong>集成测试</strong>：集成测试就是接口测试，对接口是否能够实现进行测试，对接口实现后的结果进行测试。通过测<strong>试发现与模块接口有关的问题</strong>。在单元测试的基础上将所有模块按照要求设计组装。<strong>测试不同模块之间是否按照预期工作，比如不同模块之间的数据传输。</strong></p>
+<p><strong>系统测试</strong>：系统测试就是对可视化图形界面测试。对整个系统功能进行测。是基于系统整体需求说明书的黑盒类测试，应覆盖系统所有联合的部件。</p>
+<p><strong>验收测试</strong>：验收测试就是模拟客户进行测试。确保软件各部分功能正常运行。确定产品是否能够满足合同或用户所规定需求的测试。验收测试包括Alpha测试和Beta测试。</p>
+<p><strong>回归测试</strong>：在缺陷修复之后的检验测试，回归测试，是软件维护阶段对软件修改后进行的测试，指<strong>修改了旧代码后</strong>，重新进行测试以确认<strong>修改没有引入新的错误</strong>或导致其他代码产生错误</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42434318/article/details/109099271">https://blog.csdn.net/qq_42434318/article/details/109099271</a></p>
+<h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><p>完成最小的<strong>软件设计单元（模块）</strong>的验证工作，目标是确保模块被正确的编码，使用过程设计描述作为指南，对重要的控制路径进行测试以发现模块内的错误，通常情况下是<strong>白盒</strong>的，对代码风格和规则、程序设计和结构、业务逻辑等进行静态测试，及早的发现和解决不易显现的错误。</p>
+<h3 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h3><p>通过测<strong>试发现与模块接口有关的问题</strong>。目标是把通过了单元测试的模块拿来，构造一个在设计中所述的程序结构，应当避免一次性的集成（除非软件规模很小），而<strong>采用增量集成</strong>。</p>
+<p><strong>自顶向下集成</strong>：模块集成的顺序是首先集成主模块，然后按照控制层次结构向下进行集成，隶属于主模块的模块按照深度优先或广度优先的方式集成到整个结构中去。</p>
+<p><strong>自底向上集成</strong>：从原子模块开始来进行构造和测试，因为模块是自底向上集成的，进行时要求所有隶属于某个给顶层次的模块总是存在的，也不再有使用稳定测试桩的必要。</p>
+<h3 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h3><p>是基于系统整体需求说明书的黑盒类测试，应覆盖系统所有联合的部件。系统测试是针对整个产品系统进行的测试，目的是验证系统是否满足了需求规格的定义，找出与需求规格不相符合或与之矛盾的地方。系统测试的对象不仅仅包括需要测试的产品系统的软件，还要包含软件所依赖的硬件、外设甚至包括某些数据、某些支持软件及其接口等。因此，必须将系统中的软件与各种依赖的资源结合起来，在系统实际运行环境下来进行测试。</p>
+<h3 id="回归测试"><a href="#回归测试" class="headerlink" title="回归测试"></a>回归测试</h3><p>回归测试是指在发生修改之后重新测试先前的测试用例以保证修改的正确性。理论上，软件产生新版本，都需要进行回归测试，<strong>验证以前发现和修复的错误是否在新软件版本上再次出现</strong>。根据修复好了的缺陷再重新进行测试。<strong>回归测试的目的在于验证以前出现过但已经修复好的缺陷不再重新出现</strong>。一般指对某已知修正的缺陷再次围绕它原来出现时的步骤重新测试。</p>
+<p>回归测试，是软件维护阶段对软件修改后进行的测试，指<strong>修改了旧代码后</strong>，重新进行测试以确认<strong>修改没有引入新的错误</strong>或导致其他代码产生错误</p>
+<h3 id="验收测试"><a href="#验收测试" class="headerlink" title="验收测试"></a>验收测试</h3><p>验收测试是指系统开发生命周期方法论的一个阶段，这时相关的用户或独立测试人员根据测试计划和结果对系统进行测试和接收。它让系统用户决定是否接收系统。它是一项确定产品是否能够满足合同或用户所规定需求的测试。验收测试包括Alpha测试和Beta测试。</p>
+<h4 id="Alpha测试"><a href="#Alpha测试" class="headerlink" title="Alpha测试"></a>Alpha测试</h4><p>是由用户在开发者的场所来进行的，在一个受控的环境中进行。</p>
+<p>例如游戏的删档内测，Alpha测试不是面对所有的用户，而是针对公司内部员工进行游戏试玩，来检测是否存在一些bug，然后反馈错误给开发去修复。</p>
+<h4 id="Beta测试"><a href="#Beta测试" class="headerlink" title="Beta测试"></a>Beta测试</h4><p>它不是受控活动，因为它发生在用户身边。在将软件交付给客户之前，它视为最终测试。发布用于beta测试的软件称为测试版软件。</p>
+<p>由软件的最终用户在一个或多个用户场所来进行的，开发者通常不在现场，用户记录测试中遇到的问题并报告给开发者，开发者对系统进行最后的修改，并开始准备发布最终的软件。</p>
+<p>例如游戏的不删档公测，通过Alpha内测之后，会进行不删除用户资料的公共测试，让大量的用户去进行体验，试玩。许多用户可以使用它，并传达他们对应用程序的反馈。提交给测试，测试再提交给开发人员去修复。</p>
+<img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720121118998.png" alt="image-20210720121118998" style="zoom:50%;" />
+
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Tt411c78F?p=3">https://www.bilibili.com/video/BV1Tt411c78F?p=3</a> 7:03</p>
+<h2 id="黑盒测试和白盒测试"><a href="#黑盒测试和白盒测试" class="headerlink" title="黑盒测试和白盒测试"></a>黑盒测试和白盒测试</h2><p>软件测试方法一般分为两种：白盒测试与黑盒测试。</p>
+<p>其中，<strong>白盒测试</strong>又称为<strong>结构测试、逻辑驱动测试或基于程序本身的测试</strong>，着重于程序的内部结构及算法，通常不关心功能与性能指标。</p>
+<p><strong>黑盒测试</strong>又被称为<strong>功能测试、数据驱动测试或基于规格说明的测试</strong>，实际上是站在最终用户的立场上，检验输入输出信息及系统性能指标是否符合规格说明书中有关功能需求及性能需求的规定。</p>
+<hr>
+<p>黑盒测试方法，不考虑程序内部结构和内部特性，而是从用户观点出发，针对程序接口和用户界面进行测试，根据产品应该实现的实际功能和已经定义好的产品规格，来验证产品所应该具有的功能是否实现，是否满足用户的要求。</p>
+<p>所以，黑盒测试方法技术相对要求低，方法简单有效，可以整体测试系统的行为，可以从头到尾（end-to-end）进行数据完整性测试。</p>
+<ul>
+<li><p>黑盒测试方法适合系统的<strong>功能测试</strong>、易用性测试，也适合和用户共同进行<strong>验收测试、软件确认测试</strong>。</p>
+</li>
+<li><p>黑盒测试方法不适合<del>单元测试、集成测试</del>，而且测试结果的覆盖度不容易度量，其测试的潜在风险比较高。</p>
+</li>
+</ul>
+<hr>
+<p>白盒测试方法，已知产品的内部工作过程，针对性很强，可以对程序每一行语句、每一个条件或分支进行测试，测试效率比较高，而且可以清楚已测试的覆盖程度。如果时间足够多，可以保证所有的语句和条件得到测试，测试的覆盖程度达到很高。</p>
+<ul>
+<li>白盒测试方法所以适合<strong>单元测试、集成测试</strong>，</li>
+<li>而不适合系统测试。白盒测试方法准备的时间很长，如果要覆盖全部程序语句、分支的测试，一般花费比编程更长的时间。</li>
+</ul>
+<p>白盒测试方法所要求的技术也较高，相应的测试成本要大。对于一个应用的系统，程序的路径数可能是一个天文数字，即使借助一些测试工具，白盒测试法也不可能进行穷举测试，企图遍历所有的路径往往是做不到的。即使，穷举路径测试，也不能查出程序违反了设计规范的地方，不能发现程序中已实现但不是用户所需要的功能，可能发现不了一些与数据相关的错误或用户操作行为的缺陷。所以白盒测试方法也存在一定的局限性。</p>
+<p><strong>常用的黑盒测试方法有：</strong><br><strong>等价类划分法；边界值分析法；因果图法；场景法；正交实验设计法；判定表驱动分析法；错误推测法；功能图分析法。</strong></p>
+<p>等价类划分法，主要解决穷举的问题：</p>
+<ul>
+<li>等价类划分法将测试数据中具有某种共同特征的数据集合，进行划分。</li>
+<li>有效等价类:满足需求的数据集合<br>无效等价类:不满足需求的数据集合</li>
+</ul>
+<p>边界值分析法</p>
+<ul>
+<li>选取正好等于、刚好大于、刚好小于边界的值作为测试数据</li>
+<li><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720170029843.png" alt="image-20210720170029843" style="zoom:50%;" /></li>
+</ul>
+<p>判定表</p>
+<ul>
+<li>是一种以表格形式表达<strong>多条件逻辑判断</strong>的工具</li>
+<li><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720190353979.png" alt="image-20210720190353979" style="zoom:50%;" /></li>
+<li>判定表中贯穿条件项和动作项的一列就是一条规则<br>假设有n个条件，每个条件的取值有两个(0,1)，全组合有2的n次方种规则</li>
+</ul>
+<p>场景法</p>
+<ul>
+<li>场景法也可以叫流程图法，是用流程图描述用户的使用场景，然后通过<strong>覆盖流程路径</strong>来设计测试用例。</li>
+<li>意义:<br>➢用户使用角度:用户平时使用的不是单个功能，而是多个功能组合起来进行使用<br>➢测试人员角 度:平时测试的都是单个功能点进行测试，容易忽略多个功能的组合测试</li>
+</ul>
+<hr>
+<p>白盒测试主要是检查程序内部的逻辑结构，也就是对所有逻辑路径进行测试，是一种穷举路径的测试方法。</p>
+<p><strong>白盒测试：逻辑覆盖+路径覆盖</strong></p>
+<p><strong>白盒测试常用方法：</strong></p>
+<p>1、逻辑覆盖测试：语句覆盖、判定覆盖、条件覆盖、判定-条件覆盖、条件组合覆盖、路径覆盖</p>
+<blockquote>
+<p>六种覆盖标准发现错误的能力呈由弱到强的变化： 1.语句覆盖每条语句至少执行一次。 2.判定覆盖每个判定的每个分支至少执行一次。 3.条件覆盖每个判定的每个条件应取到各种可能的值。 4.判定&#x2F;条件覆盖同时满足判定覆盖条件覆盖。 5.条件组合覆盖每个判定中各条件的每一种组合至少出现一次。 6.路径覆盖使程序中每一条可能的路径至少执行一次。</p>
+<p>所以理论上来讲<strong>路径覆盖是最彻底的测试用例覆盖</strong>，但实际上很多时候路径覆盖的可操作性不强。</p>
+</blockquote>
+<p>2、基本路径覆盖测试：选择足够的测试用例，使得运行这些测试用例时，被测程序的每条可能执行的路径都至少经过一次。</p>
+<p>数据流测试：</p>
+<p>循环测试：简单循环、嵌套循环、串接循环和非结构循环。</p>
+<h3 id="黑盒白盒适合运用于什么场景"><a href="#黑盒白盒适合运用于什么场景" class="headerlink" title="黑盒白盒适合运用于什么场景"></a>黑盒白盒适合运用于什么场景</h3><h3 id="黑盒测试与白盒测试优缺点"><a href="#黑盒测试与白盒测试优缺点" class="headerlink" title="黑盒测试与白盒测试优缺点"></a>黑盒测试与白盒测试优缺点</h3><p>黑盒测试的优点有：<br>  比较简单，不需要了解程序内部的代码及实现；<br>  与软件的内部实现无关；<br>  从用户角度出发，能很容易的知道用户会用到哪些功能，会遇到哪些问题；<br>  基于软件开发文档，所以也能知道软件实现了文档中的哪些功能；<br>  在做软件自动化测试时较为方便。</p>
+<p>黑盒测试的缺点有：<br>  不可能覆盖所有的代码，覆盖率较低，大概只能达到总代码量的30%；<br>  自动化测试的复用性较低。</p>
+<p>白盒测试的优点有：<br>  帮助软件测试人员增大代码的覆盖率，提高代码的质量，发现代码中隐藏的问题。</p>
+<p>白盒测试的缺点有：<br>  程序运行会有很多不同的路径，不可能测试所有的运行路径；<br>  测试基于代码，只能测试开发人员做的对不对，而不能知道设计的正确与否，可能会漏掉一些功能需求；<br>  系统庞大时，测试开销会非常大。</p>
+<h2 id="冒烟测试"><a href="#冒烟测试" class="headerlink" title="冒烟测试"></a>冒烟测试</h2><p><strong>冒烟测试： 确保开发人员修复了 bug 后，这个 bug 的修复没有影响到其他功能模块。</strong></p>
+<p><strong>冒烟测试是否通过决定了下一轮系统测试是否可以执行。</strong></p>
+<p>冒烟测试的重要性，不作用于本身，而是决定了下一轮测试是否能达到理想的效果</p>
+<p>与系统测试不同之处在于冒烟测试是一种<strong>不要求覆盖面有多广的测试，但是要保证被测对象的主要部分功能要得到测试</strong>，不要求每一个功能都面面俱到，但是要保证所有被修改过以及与修改相关的功能、主要的功能都是可用的，<strong>即证明这个版本可进行系统测试</strong></p>
+<p><strong>冒烟测试，是版本验证测试</strong>，主要<strong>确认新的版本是否存在致命性bug</strong>，功能可以正常运行（不会出现跑不通的状况），不会影响下一轮测试的进行，如果上述都符合那么这个版本就可以进行下一轮测试。</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103637689">https://zhuanlan.zhihu.com/p/103637689</a></p>
+<p>与回归测试不同，回归测试，是软件维护阶段对软件修改后进行的测试，指<strong>修改了旧代码后</strong>，重新进行测试以确认<strong>修改没有引入新的错误</strong>或导致其他代码产生错误</p>
+<hr>
+<ul>
+<li><strong>1.什么是测试用例</strong></li>
+<li>用例:用户使用的案例<br>测试用例:执行测试时用户案例<br>英文: Test Case</li>
+<li><strong>2.为什么 需要编写测试用例</strong></li>
+<li>目的:保证测试点的正确执行</li>
+<li><strong>3.测试用例编写格式</strong></li>
+<li>说明:用例编写格式一般由八大要素组成。</li>
+<li><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720131430892.png" alt="image-20210720131430892"></li>
+<li><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720132312175.png" alt="image-20210720132312175" style="zoom:25%;" /></li>
+<li><strong>4.编写示例</strong></li>
+</ul>
+<p>微信登录测试点:<br>1、登录成功<br>2、密码错误,登录失败</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720133450128.png" alt="image-20210720133450128"></p>
+<h2 id="☆☆☆测试用例☆☆☆"><a href="#☆☆☆测试用例☆☆☆" class="headerlink" title="☆☆☆测试用例☆☆☆"></a>☆☆☆测试用例☆☆☆</h2><h2 id="这几个方面看（功能、界面、性能、安全性、兼容性"><a href="#这几个方面看（功能、界面、性能、安全性、兼容性" class="headerlink" title="这几个方面看（功能、界面、性能、安全性、兼容性"></a>这几个方面看（功能、界面、性能、安全性、兼容性</h2><p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210801095511694.png" alt="image-20210801095511694"> </p>
+<h3 id="x3D-x3D-x3D-x3D-x3D-具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><p>But，还没有结束。如果更近一步，可以从测试手段上进行进一步的思考。<strong>你是希望测试一个矿泉水瓶呢还是一百万个？</strong>测试一个的话手动就行了。如果是一百万个？只能借助机器，用自动化的方式来实现了。再比如稳定性测试中，<strong>瓶盖是需要开启十次还是一万次</strong>？十次手动做做还可以接受，一万次扭下来估计手也要废掉了。所以必须考虑自动化。诸如此类</p>
+<h3 id="【飞书】视频会议测试用例"><a href="#【飞书】视频会议测试用例" class="headerlink" title="【飞书】视频会议测试用例"></a>【飞书】视频会议测试用例</h3><p>功能测试<br>界面测试<br>性能测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong></p>
+<ol>
+<li><p>发起新会议，按钮是否可用，弹出的界面是否正确</p>
+</li>
+<li><p><strong>是否支持设置会议主题</strong>，验证每种合法的输入，结果是否正确，<strong>各种正常输入的字符，混合输入，排列组合。</strong><br> 是否可以输入数字，英文，中文，特殊字符等<br> 是否可以<strong>混合输入</strong>数字，英文，中文，特殊字符等<br><strong>边界值验证</strong>：不输入字，输入字，最多输入多少字，在允许的字符串长度<strong>内外</strong>，系统如何处理<br>是否只能输入允许的字符串长度<br>超长字符串粘贴输入，系统<strong>是否会截取允许的长度</strong>来检验结果</p>
+</li>
+</ol>
+<p>  输入框是否支持<strong>编辑、复制、粘贴、剪切、</strong>等操作</p>
+<ol start="2">
+<li>麦克风设置，是否支持关闭、开启麦克风；是否支持切换扬声器选项；是否支持测试扬声器和麦克风可用性</li>
+<li>摄像头设置，是否支持关闭、开启摄像头；是否支持设置虚拟背景，虚拟形象；</li>
+<li>如果使用手机应用，<strong>使用移动网络</strong>进行视频通话是否会有提示：使用流量提示</li>
+<li>开始会议，音视频是否连接成功</li>
+<li>清晰度，流畅度，<strong>声音和画面是否正常</strong>，是否同步</li>
+<li><strong>是否支持录制，录制之后是否支持飞书妙记的功能</strong></li>
+<li>会议分享邀请功能是否可用</li>
+<li>会议权限设置，根据不同的权限，测试有效和无效用例</li>
+<li>屏幕共享功能，，，是否所有进程都能被检测到，飞书云文件文档是否也可分享</li>
+<li>字幕功能是否可用，字幕设置语言，可进行实时翻译</li>
+<li>多人视频会议<strong>可容纳的人数上限</strong></li>
+<li><strong>视频会议中，</strong>网络质量差是否有提示信息</li>
+<li>视频会议挂断功能<strong>是否正常（全员结束会议</strong></li>
+<li>会议记录详情</li>
+<li>加入会议功能是否可用，会议ID错误是否有提示</li>
+<li>会议ID输入框，是否只支持输入数字，其他特殊字符是否可输入</li>
+<li>在<strong>断网的情况</strong>下视频会议,<strong>检查是否有提示信息</strong></li>
+<li>在<strong>弱网的情况</strong>下视频会议，网络延迟，卡顿，服务器响应, 检查提示信息</li>
+</ol>
+<p>异常：<br><strong>无网络</strong>是否可以发起会议，是否提示：当前网络不可用，请检查网络设置<br>无网络是否可以结束会议（通话中断<br><strong>网络质量不好</strong>的情况下发起、接收会议<br>会议中<strong>有新的</strong>会议邀请<br>会议中手机&#x2F;电脑<strong>没电、断网、故障、系统更新、应用app切换</strong>（中断测试<br>会议中<strong>来电话，短信</strong>（中断测试<br>会议时电脑&#x2F;<strong>手机重启、手机卡死</strong>（中断测试<br>会议中<strong>系统版本升级</strong>（中断测试</p>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否<strong>简单，美观</strong></li>
+<li>界面文字，图片和图标显示正常</li>
+<li>是否有<strong>错别字</strong></li>
+<li>操作过程中出现的<strong>各种提示显示正常</strong>。</li>
+<li>双方视频框大小布局合理</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的<strong>设计风格</strong>，<strong>颜色搭配是</strong>否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li>视频会议接听后的<strong>响应速度</strong></li>
+<li><strong>高并发场景下，多人同时进入视频会议的响应情况</strong></li>
+<li>压力测试——<strong>长时间视频会议（如12小时）是否能保持正常</strong>（CPU，内存消耗，流量消耗）等；</li>
+<li>稳定性测试——<strong>频繁</strong>进行视频会议；</li>
+<li><strong>不同网络测试：</strong>2G,3G,4G,5G,wifi和热点，不同运营商测试；不同网速测试</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li><strong>脚本的禁用，防止XSS攻击，填入js代码是否异常（alert(1111)）</strong></li>
+<li><strong>SQL的注入，检索SQL SELECT语句等</strong>（’ or 1&#x3D;1# ）如单引号、%等等，造成查询SQL拼接出的语句产生漏洞</li>
+<li>文字聊天中，敏感内容是禁止的，对涉及国家安全、法律禁止的内容是否进行了相关的过滤和控制</li>
+<li>是否有安全设计控制</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>（例如ios12,13,14，安卓）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>多浏览器</strong>chrome、IE、火狐、360等</li>
+<li><strong>不同的飞书版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="视频直播测试用例（直播或播放"><a href="#视频直播测试用例（直播或播放" class="headerlink" title="视频直播测试用例（直播或播放"></a>视频直播测试用例（直播或播放</h3><p>功能测试<br>界面测试<br>性能测试<br>安全性测试<br>兼容性测试<br><strong>一、功能测试</strong><br><strong>使用移动网络</strong>是否会有提示：移动网络下将产生手机流量<br>进入直播中，视频<strong>能否链接成功</strong><br>进入直播中，<strong>声音和画面是否正常，是否同步</strong><br>进入直播中，<strong>插拔耳机</strong>是否能正常直播<br>直播的模式：横屏，竖屏，或者来回切换。<br>直播中，<strong>网络质量差</strong>是否有提示信息</p>
+<p>直播间<strong>可容纳的人数上限</strong></p>
+<p>播放的UI键位：返回，关闭，播放&#x2F;暂停，最大化&#x2F;最小化，音量的调节。<br>是否可以<strong>点击返回键、Home键</strong><br>是否可以<strong>与其他应用切换</strong><br><strong>挂断功能</strong>是否正常</p>
+<p>直播播放的机制：首次进入正常播放 ，暂停播放，继续播放，快进播放，倍速播放，连续播放，拖拽播放等等情况<br>直播延迟情况：对于直播，延迟是否在需求内<br>直播中的互动：互动，评价等是否正常<br>播放缓存机制：如支持缓存下载，则校验下载，下载完成播放，下载暂停，下载继续，下载删除再下载等情况</p>
+<p>直播结束，直播者<strong>结束直播</strong>，接收者是否也结束<br>直播详情页面，<strong>是否有直播显示记录</strong></p>
+<p>播放的网络：WIFI、2G、3G、4G网络环境下的播放和加载情况。断网之后能否继续恢复播放</p>
+<p>异常：<br><strong>无网络</strong>是否可以发起直播，是否提示：当前网络不可用，请检查网络设置<br>无网络是否可以结束视直播（直播中断<br><strong>网络质量不好</strong>的情况下发起、接收直播<br>直播中手机<strong>没电、断网、手机故障、系统更新、app切换</strong>（中断测试<br>直播中<strong>来电话，短信</strong>（中断测试<br>直播<strong>手机重启、手机卡死</strong>（中断测试<br>直播<strong>直播软件版本升级</strong>（中断测试<br>异常情况：播放中多个APP前后切换，播放是否正常<br>异常情况：播放中被外界打断，如来电，短信，按home键等</p>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否<strong>简单，美观</strong></li>
+<li>界面文字，图片和图标显示正常</li>
+<li>是否有<strong>错别字</strong></li>
+<li>操作过程中出现的<strong>各种提示显示正常</strong>。</li>
+<li>双方视频框大小布局合理</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的<strong>设计风格</strong>，<strong>颜色搭配是</strong>否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li>发起直播的<strong>响应速度</strong>，打开直播的响应速度</li>
+<li><strong>高并发场景下用户进入直播的响应时间测试。</strong><br>模拟大量用户同时进入直播，检查一定压力下能否正常跳转。</li>
+<li>负载测试：看极限能承载多大的用户量同时正常使用</li>
+<li>弱网测试，<strong>弱网时直播的响应时间</strong></li>
+<li>压力测试——<strong>长时间直播（如12小时）是否能保持正常</strong>（CPU，内存消耗，流量消耗）等；</li>
+<li>稳定性测试——<strong>频繁</strong>进行直播；</li>
+<li><strong>不同网络测试：</strong>2G,3G,4G,5G,wifi和热点，不同运营商测试；不同网速测试</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li><strong>脚本的禁用，防止XSS攻击，填入js代码是否异常（alert(1111)）</strong></li>
+<li><strong>SQL的注入，检索SQL SELECT语句等</strong>（’ or 1&#x3D;1# ）如单引号、%等等，造成查询SQL拼接出的语句产生漏洞</li>
+<li>直播中，敏感内容是禁止的，对涉及国家安全、法律禁止的内容是否进行了相关的过滤和控制</li>
+<li>是否有安全设计控制</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>（例如ios12,13,14，安卓）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>多浏览器</strong>chrome、IE、火狐、360等</li>
+<li><strong>不同的直播软件版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="登录测试用例（例如微信等APP，网站登录"><a href="#登录测试用例（例如微信等APP，网站登录" class="headerlink" title="登录测试用例（例如微信等APP，网站登录"></a>登录测试用例（例如微信等APP，网站登录</h3><p>功能测试<br>界面测试<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong></p>
+<ol>
+<li>输入已注册<strong>正确</strong>的用户名和密码，点击提交按钮，验证是否能正确登录。<strong>检查登录成功后数据库是否写入了session信息</strong></li>
+<li>输入<strong>未注册</strong>用户名或者<strong>错误</strong>的密码，验证登录会<strong>失败</strong>，并且<strong>提示用户或密码错误信息</strong>。检查登录失败时数据库生成的session不会记录用户信息</li>
+<li>什么都不输入，点击提交按钮，检查提示信息。（微信是什么都不输，登录按钮为不可用灰色）</li>
+<li><strong>未注册用户通过手机号验证码第一次登录成功时，是否提示修改密码</strong></li>
+<li><strong>通过手机号+验证码方式登录，在用户授权的情况下，检查能不能自动获取到短信验证码</strong></li>
+<li>登录成功后<strong>能否跳转到正确的页面</strong></li>
+<li>检查<strong>能否选择不同登录方式</strong>进行登录，如使用手机号登录、使用微信号登录或扫码登录。</li>
+<li>扫码登录，<strong>检查二维码是否可以定时失效刷新</strong></li>
+<li>检查有没有<strong>记住用户名的功能</strong></li>
+<li><strong>登陆失败后，不能记录密码</strong>的功能</li>
+<li><strong>密码是否非明文显示</strong>，使用星号圆点等符号代替。</li>
+<li>有验证码时，还要考虑文字是否扭曲过度导致辨认难度大，考虑颜色、刷新或换一个按钮是否好用</li>
+<li>登录页面中的注册、忘记密码，登出用另一帐号登陆<strong>等功能的链接是否正确</strong></li>
+<li>输入密码的时候，大写键盘开启的时候要有提示信息</li>
+<li>在<strong>断网的情况</strong>下能否正常登录**,检查是否有提示信息**</li>
+<li>在<strong>弱网的情况</strong>下能否正常登录，网络延迟服务器响应, <strong>检查提示信息</strong></li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>布局是否合理，textbox（文本框控件）和按钮是否整齐。</li>
+<li>textbox和按钮的长度，高度是否符合要求。</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+<li>界面中的文字简洁易懂，没有错别字。</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li><strong>打开登录页面，需要的时间</strong>是否在<strong>需求</strong>要求的时间内。</li>
+<li><strong>不同网速下搜索时的响应时间</strong>3g,4g,5g,WIFI、热点；不同运营商网络</li>
+<li><strong>单用户登录的响应时间。</strong><br>​    输入正确的用户名和密码后，检查登录成功跳转到新页面的时间是否在需求要求的时间内。</li>
+<li><strong>高并发场景下用户登录的响应时间测试。</strong><br>​    模拟大量用户同时登陆，检查一定压力下能否正常登陆跳转。</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li>登录成功后生成的<strong>Cookie，是否是http-only</strong> (否则容易被脚本盗取)。</li>
+<li>用户名和密码<strong>是否通过加密的方式，发送给Web服务器</strong>。</li>
+<li>用户名和密码的输入框，应该<strong>屏蔽SQL注入攻击</strong>。</li>
+<li>用户名和密码的的输入框，应该<strong>禁止输入脚本 （防止XSS攻击）</strong>。</li>
+<li><strong>防止暴力破解</strong>，检测是否有错误<strong>登陆的次数限制</strong>。</li>
+<li>是否支持<strong>多用户在同一机器上登录</strong>。</li>
+<li><strong>同一用户能否在多台机器上登录</strong>。</li>
+<li><strong>密码输入框</strong>是否<strong>是不支持复制粘贴的</strong></li>
+<li><strong>异地登录校验、更换设备校验</strong></li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>不同移动平台</strong>或PC环境下下能否显示正常且功能正常（平台不同</li>
+<li><strong>同种平台</strong>下<strong>不同微信版本</strong>下能否显示正常且功能正常。（微信版本</li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本。</strong>（本地化测试）【就比如设置手机语言环境为英文&#x2F;中文】</li>
+</ol>
+<h3 id="百度搜索框测试用例"><a href="#百度搜索框测试用例" class="headerlink" title="百度搜索框测试用例"></a>百度搜索框测试用例</h3><p>功能测试<br>界面测试<br>性能测试<br>安全性测试<br>兼容性测试<br><strong>特性</strong></p>
+<p><strong>一、功能测试</strong></p>
+<ol>
+<li>验证每种合法的输入，结果是否正确，<strong>各种正常输入的字符，混合输入，排列组合。</strong></li>
+<li>是否可以输入数字，英文，中文等</li>
+<li>是否可以<strong>混合输入</strong>数字，英文，中文等</li>
+<li><strong>分词功能</strong>，在输入一些毫无关联的文字时，是否针对其中某一个有实际的关键词进行搜索</li>
+<li>搜索内容与搜索结果的<strong>匹配程度</strong></li>
+<li>点击搜索，<strong>是否正常显示搜索界面</strong></li>
+<li><strong>搜索内容为空</strong>，系统如何处理（为空测试</li>
+<li>搜索内容为空格，系统如何处理</li>
+<li><strong>边界值验证</strong>：不输入字，输入字，最多输入多少字，在允许的字符串长度<strong>内外</strong>，系统如何处理</li>
+<li>是否只能输入允许的字符串长度</li>
+<li>超长字符串粘贴输入，系统<strong>是否会截取允许的长度</strong>来检验结果</li>
+<li>在系统允许的合法的字符串长度后，<strong>加空格来验证检索结果是否变化</strong></li>
+<li>多个关键字中间加入空格，逗号，验证系统的结果是否正确</li>
+<li>输入<strong>拼音</strong>能不能进行检索</li>
+<li>输入<strong>特殊字符</strong>、转义字符等是否可以搜索</li>
+<li>是否支持<strong>语音搜索</strong>，语音搜索按钮是否可用，语音搜索的内容是否匹配</li>
+<li>是否支持<strong>图片搜索</strong>，图片搜索按钮是否可用，进行图片搜索时是否可以选择拍照或从相册中选取图片进行搜索</li>
+<li>如果从相册中选取图片进行搜索，图的大小是否有限制</li>
+<li>能否识别图片中的内容</li>
+<li>是否支持回车键搜索</li>
+<li>输入的内容是否支持快捷键操作等</li>
+<li>是否支持检索内容的<strong>编辑、复制、粘贴、剪切、</strong>等操作</li>
+<li><strong>重复提交，</strong>多次输入相同的内容，查看系统的检索结果是否一致</li>
+<li>搜索内容有没有<strong>搜索联想</strong>功能</li>
+<li>搜索的<strong>历史纪录</strong>是否显示，是否有缓存记录</li>
+<li>点击<strong>清空历史记录</strong>，搜索框是否会清空</li>
+<li>输入链接是否正确跳转</li>
+<li>在<strong>断网的情况</strong>下无法搜索,<strong>检查是否有提示信息</strong></li>
+<li>在<strong>弱网的情况</strong>下能否搜索，网络延迟服务器响应, <strong>检查提示信息</strong></li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong>，</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>是否有<strong>错别字</strong></li>
+<li><strong>搜索结果显示</strong>的布局是否美观</li>
+<li>已查看的结果链接，链接的颜色要<strong>灰化处理</strong>，</li>
+<li>结果数量庞大时，页面的<strong>分页布局</strong>是否合理</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、安全性测试</strong></p>
+<ol>
+<li><strong>脚本的禁用，防止XSS攻击，填入js代码是否异常（alert(1111)）</strong></li>
+<li><strong>SQL的注入，检索SQL SELECT语句等</strong>（’ or 1&#x3D;1# ）如单引号、%等等，造成查询SQL拼接出的语句产生漏洞</li>
+<li>敏感内容的检索是禁止的，对涉及国家安全、法律禁止的内容是否进行了相关的过滤和控制</li>
+<li>特殊字符的检索</li>
+<li>被删除、加密、授权的数据，不允许被查出来</li>
+<li>是否有安全设计控制</li>
+</ol>
+<p><strong>四、性能测试</strong></p>
+<ol>
+<li>搜索页面的链接<strong>打开速度的时间</strong></li>
+<li>搜索出结果消耗时间</li>
+<li><strong>高并发场景下用户搜索的响应时间测试。</strong><br>模拟大量用户同时搜索，检查一定压力下能否正常跳转。</li>
+<li><strong>弱网时搜索的响应时间</strong></li>
+<li><strong>不同网速下搜索时的响应时间</strong>3g,4g,5G,WIFI、热点，不同运营商网络</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>多平台</strong>Windows，mac</li>
+<li><strong>移动平台</strong>android，ios</li>
+<li><strong>多浏览器</strong>chrome、IE、火狐、360等</li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="微信朋友圈点赞测试"><a href="#微信朋友圈点赞测试" class="headerlink" title="微信朋友圈点赞测试"></a>微信朋友圈点赞测试</h3><p>功能测试<br>界面测试<br><strong>接口测试</strong>（相同好友<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong><br>按点赞人</p>
+<ol>
+<li>是否可以点赞，<strong>点赞成功</strong>是否显示结果</li>
+<li>点赞后能否<strong>取消点赞</strong>，取消后重新点赞情况</li>
+<li>点赞是否<strong>显示头像和昵称</strong></li>
+<li>点赞<strong>之后能否进行评论</strong></li>
+<li>点赞后，其他<strong>共同好友点赞</strong>，是否有消息提醒</li>
+<li>点赞后，其他<strong>非共同好友点赞</strong>，是否有消息提醒</li>
+<li>点击点赞人的昵称，<strong>能否跳转到其资料页</strong>（可以点自己的，也可以点别人的</li>
+<li>从朋友圈动态点赞</li>
+<li>访问好友相册，对历史动态点赞情况，点赞不同时间的朋友圈（当天，一周后，一月后，半年后</li>
+<li><strong>点赞已经被删除的朋友圈</strong>（点赞方还没来得及刷新的时候</li>
+<li>点赞时<strong>手机没电、断网、手机故障、系统更新、app切换</strong>（中断测试</li>
+<li>点赞时<strong>来电话，来信息</strong>有没有影响（中断测试</li>
+<li>点赞时<strong>手机重启、手机卡死</strong>（中断测试</li>
+<li>点赞时<strong>微信版本升级</strong>（中断测试</li>
+</ol>
+<p>按被点赞人</p>
+<ol>
+<li>自己给自己点赞</li>
+<li>点赞人昵称是否显示正常（有备注的是否展示备注名，昵称特殊符号能否展示</li>
+<li><strong>点赞后列表显示，是否是按时间顺序进行排列</strong></li>
+<li>点赞显示区域<strong>一行可以显示多少人，是否换行显示</strong></li>
+<li>从朋友圈动态页查看，是否显示点赞用户昵称</li>
+<li>从个人相册页查看，是否显示点赞用户头像图标</li>
+<li>从个人相册页点击单张图片查看，是否显示点赞用户数量</li>
+<li>解除好友关系后，或者屏蔽好友后是否还展示其点赞</li>
+</ol>
+<p>按点赞内容：</p>
+<ol>
+<li><strong>点赞不同类型的朋友圈，图片，文字，视频，链接</strong></li>
+</ol>
+<p>消息提醒：</p>
+<ol>
+<li>进去朋友圈，<strong>顶端消息提醒</strong></li>
+<li>用户屏蔽了朋友圈提醒，有新点赞是否不提醒</li>
+<li>动态删除后，原来未查看的消息，是否展示</li>
+<li>消息列表展示详情</li>
+<li><strong>消息未查看，换设备登录，是否仍存在消息提醒</strong></li>
+</ol>
+<p>其他</p>
+<ol>
+<li><strong>多次点赞</strong>会出现什么情况</li>
+<li>点赞是否有<strong>人数限制</strong>？</li>
+<li>同一朋友圈，<strong>多个好友同时点赞</strong></li>
+<li>同一朋友圈，用户<strong>在手机和电脑上同时点赞</strong></li>
+<li><strong>弱网</strong>的时候进行点赞是什么情况</li>
+<li><strong>没有网络</strong>时是否可以点赞</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否简单，美观</li>
+<li>点赞的头像是否显示正常，大小是否合适</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、接口测试</strong>相同好友</p>
+<ol>
+<li>点赞之后相同好友是否收到提示信息</li>
+<li>相同好友处的提示信息是否按照时间顺序</li>
+<li>相同好友处的点赞是否显示头像和名称</li>
+</ol>
+<p><strong>四、性能测试</strong></p>
+<ol>
+<li>点赞图标的<strong>显示速度</strong>——用户点击点赞几秒后可以看到点赞成功，取消点赞后几秒可以看到取消</li>
+<li><strong>多用户同时</strong>给我点赞时，我是否可以全部接收到提示消息（压力测试</li>
+<li>频繁点击是否卡顿</li>
+<li>频繁浏览是否易崩溃</li>
+<li>3g,4g,5G,WIFI、热点，不同运营商网络的网络测试</li>
+<li>弱网测试，网络延迟，断网的响应结果</li>
+</ol>
+<p><strong>五、安全性测试</strong><br>点赞是否会泄漏微信用户相关信息</p>
+<p><strong>六、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>，是否都可以进行点赞和取消点赞功能（例如ios12,13,14，安卓）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>不同的微信版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="微信视频通话测试用例"><a href="#微信视频通话测试用例" class="headerlink" title="微信视频通话测试用例"></a>微信视频通话测试用例</h3><p>功能测试<br>界面测试<br>性能测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong><br>发起视频通话，<strong>使用移动网络</strong>进行视频通话是否会有提示：移动网络下将产生手机流量<br>发起视频通话，对方<strong>接听前，是否可以点击取消</strong>，取消有无信息提示<br>发起视频通话，是否可以听到<strong>铃声</strong><br>发起视频通话，对方<strong>接听前是否可以切换到语音通话</strong><br>发起视频通话，<strong>对方正在视频通话</strong>是否会有提示信息<strong>“对方忙”</strong><br>发起视频通话，<strong>对方无应答</strong>，是否有提示信息<br>发起视频通话，<strong>对方拒绝</strong>，是否有提示信息</p>
+<p>视频通话中，视频<strong>能否链接成功</strong><br>视频通话中，<strong>声音和画面是否正常，是否同步</strong><br>视频通话中，<strong>是否可切换到语音通话</strong><br>视频通话中，<strong>前后摄像头转换</strong>是否正常<br>视频通话中，<strong>插拔耳机</strong>是否能正常通话<br>视频通话中，点击对方视频窗口<strong>是否可以窗口交换</strong><br>视频通话中，点击音量键<strong>是否可以调节音量</strong><br>视频通话中，是否可以<strong>点击返回键、Home键</strong><br>视频通话中，是否可以<strong>与其他应用切换</strong><br>视频通话中，<strong>挂断功能</strong>是否正常<br>视频通话中，<strong>网络质量差</strong>是否有提示信息</p>
+<p>视频通话结束，发起者<strong>结束通话</strong><br>视频通话结束，接收者结束通话<br>视频通话结束，<strong>是否会返回聊天页面</strong><br>聊天页面，<strong>是否有显示记录</strong>（通话时长00:27，对方已取消，对方已拒绝，通话中断，对方忙线中，已拒绝，已取消……</p>
+<p>多人视频通话：<br>勾选好友后，确认按钮才可以点击<br>邀请的好友是否都可以进入视频通话<br>未被邀请的好友能否进入视频通话<br><strong>未被邀请的好友是否可以发起视频通话</strong>（只能加入正在进行的通话，不能发起<br>在群聊里<strong>发起</strong>视频通话是否有消息显示：谁谁谁发起了语音通话<br>在群聊里视频通话<strong>结束</strong>是否有已经结束的提示：语音通话已结束<br><strong>使用移动网络</strong>进行视频通话是否会有提示</p>
+<p>异常：<br><strong>无网络</strong>是否可以发起视频通话，是否提示：当前网络不可用，请检查网络设置<br>无网络是否可以结束视频通话（通话中断<br><strong>网络质量不好</strong>的情况下发起、接收视频通话<br>视频通话中<strong>有新的</strong>视频通话邀请<br>视频通话中手机<strong>没电、断网、手机故障、系统更新、app切换</strong>（中断测试<br>视频通话中<strong>来电话，短信</strong>（中断测试<br>视频通话时<strong>手机重启、手机卡死</strong>（中断测试<br>视频通话中<strong>微信版本升级</strong>（中断测试</p>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否<strong>简单，美观</strong></li>
+<li>界面文字，图片和图标显示正常</li>
+<li>是否有<strong>错别字</strong></li>
+<li>操作过程中出现的<strong>各种提示显示正常</strong>。</li>
+<li>双方视频框大小布局合理</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的<strong>设计风格</strong>，<strong>颜色搭配是</strong>否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li>视频通话接听后的<strong>响应速度</strong></li>
+<li>多人视频通话<strong>可容纳的人数上限</strong></li>
+<li>压力测试——<strong>长时间视频（如12小时）是否能保持正常</strong>（CPU，内存消耗，流量消耗）等；</li>
+<li>稳定性测试——<strong>频繁</strong>进行视频通话；</li>
+<li><strong>不同网络测试：</strong>2G,3G,4G,5G,wifi和热点，不同运营商测试；不同网速测试</li>
+</ol>
+<p><strong>四、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>，是否都可以进行点赞和取消点赞功能（例如ios12,13,14，安卓）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>不同的微信版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="微信发红包测试用例"><a href="#微信发红包测试用例" class="headerlink" title="微信发红包测试用例"></a>微信发红包测试用例</h3><p>功能测试<br>界面测试<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong><br><strong>发给单个好友红包</strong><br>输入正确或错误的金额、有无留言、有无表情、有无选择红包封面 <strong>做排列组合的测试</strong><br>是否可以按返回键，<strong>是否可以取消</strong>发红包</p>
+<p>对于金额，<strong>是否只能输入数字和小数点</strong><br>对于金额，<strong>是否支持复制、粘贴、剪切</strong><br>对于金额，<strong>测一些边界值</strong>（0，0.01，01，199.99，200，200.01）<br>对于金额，检查<strong>限制几位小数点</strong>，<strong>最少可以输入的钱数</strong><br>对于金额，检查限制单个红包金额，<strong>最多可以输入的钱数</strong>，是否不超过200<br>对于金额（0.01-200），输入0，或者0.0或者0.00，是否可以点击塞钱进红包（<strong>为空测试</strong><br>对于超过200的金额，是否可以点击塞钱进红包<br><strong>直接输入小数点，那么小数点之前是否自动补0</strong><br>对于输入0开头的金额，比如023，<strong>是否会去掉首部0，只显示23</strong></p>
+<p>对于留言，测试默认留言：恭喜发财，大吉大利<br><strong>测试输入</strong>数字、中文、英文、特殊字符、emoji表情,；或者他们的<strong>组合</strong><br>测试<strong>留言长度限制</strong>，输入超长文本时，是否会截断显示限制<br>是否支持<strong>复制、粘贴、剪切</strong></p>
+<p>测试表情，是否支持选择自己收藏的表情测试（动图&#x2F;静图）<br>测试表情，是否支持选择下载的表情测试（动图&#x2F;静图）<br>自拍表情，是否支持录制并添加进行测试<br>选择完表情之后，<strong>是否图标改变，预览显示小表情</strong><br>点击表情，<strong>是否支持删除</strong>已选择表情</p>
+<p>是否支持添加红包封面，输入序列号领取<br>是否支持切换红包封面<br>是否显示红包封面的有效期<br>是否能查看已失效的红包封面<br>是否下一次发红包，默认是上一次选择的红包封面（没过期失效的情况下</p>
+<p><strong>点击塞钱进红包，弹出来的界面是否正确</strong><br><strong>如果未开通微信支付，有无引导提示！！！！！</strong><br>如果有开通微信支付，则<strong>支付方式</strong>是否可以修改<br>信用卡交易，<strong>不可选</strong><br>零钱或者零钱通余额小于要发红包的金额，<strong>不可选</strong><br>有没有<strong>添加新的银行卡选项</strong><br>选择支付方式之后，<strong>是否按用户设置的默认方式进行支付</strong>，例如使用正确指纹、或者正确面容、或者正确密码确认付款功能是否正常<br>不正确的指纹或者面容，<strong>不正确的是否提示</strong>，重试依旧<strong>不正确之后是否提示密码输入</strong><br>选择支付方式之后，使用密码确认付款（正确的&#x2F;不正确的密码，不正确的是否提示）<br><strong>密码是否非明文显示</strong><br>密码输入错误，是否可以<strong>选择忘记密码，或者重试，跳转页面是否正确</strong><br>是否<strong>限制密码输入错误次数</strong><br>考虑所选支付方式金额不足的情况，如果<strong>支付失败，是否会提示余额不足</strong><br>如果余额不足是否会提示，换支付方式，已经尝试过的余额不足的选项<strong>是否被灰化</strong></p>
+<p>如果红包发送成功，所选支付方式<strong>是否减少了相应的金额</strong><br><strong>账单明细</strong>里是否会同步显示<br>发送者&#x2F;接收者，点击红包是否可以<strong>查看红包的具体信息</strong>，金额，留言，表情等显示正确<br><strong>发给单个用户的红包，发送者自己无法领取</strong><br>接收者点击红包之后，零钱中将增加相应的金额，再次点击之后，只能查看到红包的信息<br>被领取的红包有颜色变化，<strong>颜色被弱化</strong><br>24小时之内没有领取的红包，将<strong>退回原账户</strong>，此时原账户的零钱将增加相应金额的金钱。<br>24小时后好友点击红包，显示红包<strong>已过期，无法查看到</strong>红包的详情以及红包金额</p>
+<p><strong>发送群红包</strong>（仅写出与单用户发红包不同的地方<br>红包类型可以选择，拼手气，专属红包<br>红包个数的<strong>输入框中只能输入数字</strong><br>红包<strong>个数最大限制</strong>，100<br>红包个数，输入0，输入01，输入最大100<br>拼手气红包<strong>是否每个红包金额随机</strong><br>普通红包是否<strong>每个红包金额一样</strong>，塞进红包钱数是不是<strong>个数×单个金额</strong><br>拼手气红包，测试红包个数为3，总金额为0.02情况，<strong>会显示单个红包不可低于0.01</strong><br>群中所有人均<strong>可以抢红包（包括自己）</strong>，每个人最多只有一次抢该红包的机会<br>发红包的人<strong>聊天界面是否可以看到红包被领取的消息提示</strong><br>在24小时之内红包的金额被完全抢完，且此时为拼手气红包时，金额最多的人会显示为运气王（若有两个人取得红包的最大值时，则只有一个人会显示为最佳手气）；<br>在24小时之内，若没有被完全抢完，则没有最佳手气，检查余额会退还到原账户<br>超过24小时没有领取的红包，检查是否不可以领取</p>
+<p><strong>异常</strong>：<br>发红包、抢红包时<strong>手机没电、断网、手机故障、系统更新、app切换</strong>（中断测试<br>发红包、抢红包时<strong>来电话，来信息</strong>有没有影响（中断测试<br>发红包、抢红包时<strong>手机重启、手机卡死</strong>（中断测试<br>发红包、抢红包时<strong>微信版本升级</strong>（中断测试<br><strong>断网</strong>时，无法发红包，抢红包</p>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否<strong>简单，美观</strong></li>
+<li>界面文字，图片和图标显示正常</li>
+<li>是否有<strong>错别字</strong></li>
+<li>操作过程中出现的<strong>各种提示显示正常</strong>。</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的<strong>设计风格</strong>，<strong>颜色搭配是</strong>否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li><strong>弱网</strong>时，抢红包，发红包时间</li>
+<li>2G,3G,4G,5G,wifi和热点，<strong>不同运营商测试</strong>；<strong>不同网速测试</strong>时，抢红包，发红包的时间</li>
+<li>发红包和收红包成功后的<strong>跳转响应时间</strong></li>
+<li>稳定性：是否可以<strong>连续多次</strong>发红包</li>
+<li>群发红包，多人同一时间抢，<strong>高并发场景</strong>下响应时间</li>
+<li>耗电量</li>
+<li>消耗流量的多少</li>
+<li>所占内存</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li>对方<strong>微信号异地登录</strong>，是否会有提醒</li>
+<li>红包被领取以后，收红包金额会增加</li>
+<li>红包未领取<strong>，超时是否原路返回</strong></li>
+<li><strong>发送红包失败</strong>，余额和银行卡里的钱数不会少</li>
+<li>红包<strong>发送成功，是否会收到微信支付</strong>的通知</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>（例如ios12,13,14，安卓）</li>
+<li><strong>不同的微信版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="微信评论测试用例（论坛评论、抖音评论功能"><a href="#微信评论测试用例（论坛评论、抖音评论功能" class="headerlink" title="微信评论测试用例（论坛评论、抖音评论功能"></a>微信评论测试用例（论坛评论、抖音评论功能</h3><p>功能测试<br>界面测试<br>性能测试<br>接口测试（共同好友<br>安全性测试<br>兼容性测试</p>
+<p>（论坛评论，需要另外注意，1、用户是否登录，是否有权限评论； 2、没有共同好友可见这种说法</p>
+<p>（抖音评论，需要另外注意，1、用户是否登录，是否有权限评论； 2、没有共同好友可见这种说法；3.可以@别人，提醒功能，可以给评论点赞功能，可以给别人评论回复，点赞多5-5条的是否置顶显示，评论的点赞数显示是否正常，某条评论的回复互动是否可以展开，收起</p>
+<p><strong>一、功能测试</strong><br><strong>按评论人</strong></p>
+<ol>
+<li>是否可以评论，<strong>评论成功</strong>是否显示结果</li>
+<li>评论后能否<strong>删除评论</strong>，删除后重新评论情况</li>
+<li><strong>支持哪些评论类型</strong>：文字、表情</li>
+<li><strong>能否评论为空，评论空格</strong>（为空测试！！！！！！！</li>
+<li>评论的<strong>字数长度限制</strong></li>
+<li>评论输入框是否<strong>支持复制粘贴剪切</strong></li>
+<li>能否<strong>多次评论</strong></li>
+<li>评论后是否<strong>显示头像和昵称</strong></li>
+<li>评论后，其他<strong>共同好友是否可以看到</strong></li>
+<li>是否可以<strong>看到其他共同好友的评论</strong></li>
+<li>是否可以<strong>回复其他共同好友的评论</strong></li>
+<li>评论后，其他<strong>共同好友评论</strong>，是否有提醒</li>
+<li>评论后，其他<strong>非共同好友评论</strong>，是否有提醒</li>
+<li>点击评论人的昵称，<strong>能否跳转到其资料页</strong>（可以点自己的，也可以点别人的</li>
+<li>从朋友圈<strong>动态页评论</strong></li>
+<li>访问好友相册，<strong>对历史动态评论</strong>，评论不同时间的朋友圈（当天，一周后，一月后，半年后</li>
+<li><strong>评论已经被删除的朋友圈</strong>（还没来得及刷新的时候</li>
+<li>评论时<strong>手机没电、断网、手机故障、系统更新、app切换</strong>（中断测试</li>
+<li>评论时<strong>来电话，来信息</strong>有没有影响（中断测试</li>
+<li>评论时<strong>手机重启、手机卡死</strong>（中断测试</li>
+<li>评论时<strong>微信版本升级</strong>（中断测试</li>
+</ol>
+<p><strong>按被评论人：</strong></p>
+<ol>
+<li>自己给自己评论</li>
+<li>评论人<strong>头像、昵称是否显示正常</strong>（有备注的是否展示备注名，昵称特殊符号能否展示</li>
+<li><strong>评论后列表显示，是否是按时间顺序</strong></li>
+<li>评论显示区域<strong>是否按评论人单独一行显示，一行最多多少字，长度超过是否换行显示</strong></li>
+<li>从朋友圈动态页查看，是否显示评论用户头像、昵称、评论内容</li>
+<li>从个人相册页点击单张图片查看，是否显示评论的数量</li>
+<li>解除好友关系后，或者屏蔽好友后是否还展示其评论</li>
+</ol>
+<p><strong>按评论的朋友圈内容：</strong></p>
+<ol>
+<li><strong>评论不同类型的朋友圈，图片，文字，视频，链接</strong></li>
+</ol>
+<p><strong>消息提醒：</strong></p>
+<ol>
+<li>进去朋友圈，<strong>顶端消息提醒</strong></li>
+<li>用户<strong>屏蔽了朋友圈提醒</strong>，有新评论是否不提醒</li>
+<li>动态删除后，原来未查看的消息，是否展示</li>
+<li><strong>消息列表展示详情</strong></li>
+<li><strong>消息未查看，换设备登录，是否仍存在消息提醒</strong></li>
+</ol>
+<p><strong>其他</strong></p>
+<ol>
+<li><strong>多次评论</strong>会出现什么情况</li>
+<li>评论是否有<strong>人数限制</strong>？</li>
+<li>同一朋友圈，<strong>多个好友同时评论</strong></li>
+<li>同一朋友圈，用户<strong>在手机和电脑上同时评论</strong></li>
+<li><strong>弱网</strong>的时候进行评论是什么情况</li>
+<li><strong>没有网络</strong>时是否可以评论</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否简单，美观</li>
+<li>评论人的头像、昵称等是否显示正常，大小是否合适</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、接口测试</strong>（相同好友</p>
+<ol>
+<li>评论之后相同好友是否收到提示信息</li>
+<li>相同好友处的提示信息是否按照时间顺序</li>
+<li>相同好友处的评论是否显示头像和名称</li>
+</ol>
+<p><strong>四、性能测试</strong></p>
+<ol>
+<li>评论的<strong>显示速度</strong>——用户评论几秒后可以看到评论显示成功，取消评论后几秒可以看到取消</li>
+<li><strong>多用户同时</strong>给我评论时，我是否可以全部接收到提示消息（压力测试</li>
+<li>频繁评论是否卡顿</li>
+<li>频繁浏览是否易崩溃</li>
+<li>3g,4g,5g,WIFI、热点，不同运营商网络的网络测试</li>
+<li>弱网测试，网络延迟，断网的响应结果</li>
+</ol>
+<p><strong>五、安全性测试</strong></p>
+<ol>
+<li>评论是否会泄漏微信用户相关信息</li>
+<li>评论里放不安全的链接</li>
+</ol>
+<p><strong>六、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>，是否都可以进行评论和取消评论功能（例如ios12,13,14，安卓）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>不同的微信版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="购物车测试（例如淘宝、淘宝结账测试用例"><a href="#购物车测试（例如淘宝、淘宝结账测试用例" class="headerlink" title="购物车测试（例如淘宝、淘宝结账测试用例"></a>购物车测试（例如淘宝、淘宝结账测试用例</h3><p>业务流程：<br>进入购物车-&gt;加商品到购物车-&gt;编辑购物车-&gt;选择商品-&gt;提交订单</p>
+<p><strong>一、功能测试</strong></p>
+<ol>
+<li>用户的权限：用户登录后才能对购物车操作，未登录会提示需要登录</li>
+<li>未登录时，将商品加入购物车，页面跳转到登录页面，登录成功后购物车数量增加</li>
+<li>未登录时，点击底部购物车菜单栏，页面跳转到登录页面，登录成功后可以查看购物车</li>
+<li>登录后，验证所有链接是否跳转正确，是否能够正常进入购物车页面，有两种方式：通过底部菜单栏或在商品详情页面跳转到购物车结算。</li>
+<li>对购物车商品的操作：<ol>
+<li>添加商品<br> 商品是否可以成功加入购物车<br> 添加一件商品到购物车，查看购物车页面商品是否增加<br> 添加同一个店铺的多个商品到购物车，查看显示是否正常<br> 添加不同店铺的多个商品到购物车，查看显示是否正常<br> 店铺或商品名过长时，是否进行部分显示<br> 点击商品链接是否能跳转到商品详情<br> 购物车商品总数是否有限制<br> 购物车商品总数是否正确<br> 新加入购物车商品排序（添加购物车中存在店铺的商品，购物车中不存在店铺的商品）显示是否正确</li>
+<li>删除商品<br> 删除功能是否好用<br> 点击删除商品，是否有提示<br> 商品删除后商品总数是否减少</li>
+<li>增加&#x2F;减少商品数量<br> 通过“+”、“-”来增加&#x2F;减少商品数量，考虑边界值0、最大限购数量、库存<br> 通过输入来确定数量，是否只支持整数输入，有效：整数；无效：特殊字符、小数、负数是否不允许输入；输入023是否自动会自动检测为23</li>
+<li>对商品的管理<br> 是否支持重新选择商品规格<br> 打折或者活动，例如满减商品是否打标<br> 移入收藏夹，收藏夹有相应商品，购物车中没有<br> 是否支持找相似商品的功能<br> 单选、按店铺全选和整个购物车全选功能是否好用<br> 多选商品，数量与选择是否一致<br> 商品无货或下架等，是否移到失效<br> 是否有回到顶部的功能<br> 是否支持一键清理，一键删除的功能，是否有警告提示</li>
+<li>结算<br> 对选择的商品进行结算，数量与选择的是否一致，需支付价格与实际价格总和是否一致。</li>
+</ol>
+</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li><strong>不同卖家的商品是否区分明显！！！！</strong></li>
+<li>界面是否<strong>简单，美观</strong></li>
+<li>界面文字是否显示清晰，图片和图标显示正常</li>
+<li>是否有<strong>错别字</strong></li>
+<li>操作过程中出现的<strong>各种提示显示正常</strong>。</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的<strong>设计风格</strong>，<strong>颜色搭配是</strong>否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li><p>加入购物车响应速度</p>
+</li>
+<li><p>打开购物车响应速度</p>
+</li>
+<li><p>进入购物车结算响应速度</p>
+</li>
+<li><p><strong>高并发场景下用户进行购物车操作的响应时间测试。</strong><br>模拟大量用户同时加购物车，检查一定压力下能否正常跳转。</p>
+</li>
+<li><p>频繁加购物车，频繁浏览是否易卡顿、崩溃</p>
+</li>
+<li><p>中断测试：<br>加购物车时<strong>手机没电、断网、手机故障、系统更新、app切换</strong>（中断测试<br>加购物车时<strong>来电话，来信息</strong>有没有影响（中断测试<br>加购物车时<strong>手机重启、手机卡死</strong>（中断测试<br>加购物车时<strong>淘宝版本升级</strong>（中断测试</p>
+</li>
+<li><p><strong>弱网测试（地铁，高铁，山区）延时，丢包，fiddler，弱网时加购的响应时间</strong>. </p>
+<p>延时——超时, 2min之内没有收到请求;合理性提示.<br>丢包——系统2min之内，没有上传到服务器，做失败处理;重发机制</p>
+</li>
+<li><p><strong>不同网速下加购的响应时间</strong>3g,4g,5G,WIFI、热点，不同运营商网络</p>
+</li>
+<li><p>网络延迟，断网的响应结果</p>
+</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li>通过一些工具进行安全扫描，检查是否有安全漏洞</li>
+<li>防止结算价格修改等，fiddler</li>
+<li>防止sql注入，跨站攻击等</li>
+<li>验证敏感信息是否加密，是否可以篡改</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>，是否都可以进行正常的购物车功能（安卓系统、ios系统，主流的系统版本需要测试覆盖）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>不同的淘宝版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="淘宝搜索框测试用例"><a href="#淘宝搜索框测试用例" class="headerlink" title="淘宝搜索框测试用例"></a>淘宝搜索框测试用例</h3><p>功能测试<br>界面测试<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong></p>
+<ol>
+<li><p>未登录情况和登录情况下的搜索（登录情况下存储用户搜索的关键字&#x2F;搜索习惯）</p>
+</li>
+<li><p>输入<strong>搜索关键字</strong>，验证每种合法的输入，结果是否正确，<strong>各种正常输入的字符，混合输入，排列组合。</strong></p>
+</li>
+<li><p>是否可以输入数字，英文，中文等</p>
+</li>
+<li><p>是否可以<strong>混合输入</strong>数字，英文，中文等</p>
+</li>
+<li><p>输入<strong>可查到结果的正常关键字</strong>、词、语句，<br>输入<strong>不可查到结果的</strong>关键字、词、语句；<br>输<strong>入一些特殊的内容</strong>，如空、特殊符、标点符；（为空测试</p>
+</li>
+<li><p>点击搜索，<strong>是否正常显示搜索界面</strong></p>
+</li>
+<li><p>搜索内容与搜索结果的<strong>匹配程度</strong>，点击商品链接是否正确跳转</p>
+</li>
+<li><p>查看返回结果是否准确，<strong>返回的商品文本长度是否有限制</strong></p>
+<p>结果显示：标题，卖家，销售量，价格，单行&#x2F;多行，列表&#x2F;平铺显示，是否有图片</p>
+</li>
+<li><p>结果排序：按价格 销量 综合 信用</p>
+</li>
+<li><p>返回结果数量很多时，限制一页的显示量，是否支持下拉</p>
+</li>
+<li><p>筛选功能是否可用：分类、价格区间、发货地、品牌、产地、折扣与服务（是否天猫，是否全球购，是否包邮，是否支持7天内退货等）筛选与设置</p>
+</li>
+<li><p>是否支持模糊搜索（输入<strong>拼音</strong>能不能进行检索），有疑似输入条件错误时提示可能正确的输入项等等处理（栗子七，你要找的是不是李子柒</p>
+</li>
+<li><p>标题查询、全文检索、模糊查询、容错查询、多关键字查询（空格间格开）等搜索方式是否正常</p>
+</li>
+<li><p>是否支持<strong>图片搜索</strong>，图片搜索按钮是否可用，进行图片搜索时是否可以选择拍照或从相册中选取图片进行搜索</p>
+</li>
+<li><p>如果从相册中选取图片进行搜索，图的大小是否有限制</p>
+</li>
+<li><p>能否识别图片中的内容</p>
+</li>
+<li><p>是否支持检索内容的<strong>编辑、复制、粘贴、剪切、</strong>等操作</p>
+</li>
+<li><p><strong>重复提交，</strong>多次输入相同的内容，查看系统的检索结果是否一致</p>
+</li>
+<li><p>搜索内容有没有<strong>搜索联想</strong>功能</p>
+</li>
+<li><p>搜索的<strong>历史纪录</strong>是否显示，是否有缓存记录</p>
+</li>
+<li><p>点击<strong>清空历史记录</strong>，是否有提示确认，历史记录是否会清空</p>
+</li>
+<li><p>在<strong>断网的情况</strong>下无法搜索,<strong>检查是否有提示信息</strong></p>
+</li>
+<li><p>在<strong>弱网的情况</strong>下能否搜索，网络延迟服务器响应, <strong>检查提示信息</strong></p>
+</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>交互界面的设计是否便于理解、易于使用依据不同的查询结果会有相关的人性化提示，查不到时告知？查到时统计条数并告知？</li>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong>，</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>是否有<strong>错别字</strong></li>
+<li><strong>搜索结果显示</strong>的布局是否美观</li>
+<li>已查看的结果链接，链接的颜色要<strong>灰化处理</strong>，</li>
+<li>结果数量庞大时，页面的<strong>分页布局</strong>是否合理</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li>搜索商品响应速度</li>
+<li><strong>高并发场景下用户搜索的响应时间测试。</strong><br>模拟大量用户同时搜索，检查一定压力下能否正常跳转。</li>
+<li>负载测试：看极限能承载多大的用户量同时正常使用</li>
+<li>弱网测试，<strong>弱网时搜索的响应时间</strong></li>
+<li>网络测试，<strong>不同网速下搜索时的响应时间</strong>3g,4g,5G,WIFI、热点，不同运营商网络</li>
+<li>稳定性测试：常规压力下能保持多久持续稳定运行</li>
+<li>内存测试：有无内存泄漏现象</li>
+<li>大数据量测试：如模拟从庞大的海量数据中搜索结果、或搜索出海量的结果后列示出来，看表现如何等</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li><strong>脚本的禁用，防止XSS攻击，填入js代码是否异常（alert(1111)）</strong></li>
+<li><strong>SQL的注入，检索SQL SELECT语句等</strong>（’ or 1&#x3D;1# ）如单引号、%等等，造成查询SQL拼接出的语句产生漏洞</li>
+<li>敏感内容的检索是禁止的，对涉及国家安全、法律禁止的内容是否进行了相关的过滤和控制</li>
+<li>特殊字符的检索</li>
+<li>被删除、加密、授权的数据，不允许被查出来</li>
+<li>是否有安全设计控制</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>多平台</strong>Windows，mac、LINUX</li>
+<li><strong>移动平台</strong>android，ios</li>
+<li><strong>多浏览器</strong>chrome、IE、火狐、360等</li>
+<li><strong>不同淘宝版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="支付功能测试（支付宝支付，微信支付，银行卡支付等"><a href="#支付功能测试（支付宝支付，微信支付，银行卡支付等" class="headerlink" title="支付功能测试（支付宝支付，微信支付，银行卡支付等"></a>支付功能测试（支付宝支付，微信支付，银行卡支付等</h3><p><strong>一、功能测试</strong></p>
+<p><strong>支付流程测试点</strong></p>
+<ol>
+<li>正常完成支付的流程；</li>
+<li>调起订单后，取消订单</li>
+<li>支付中断后，继续支付的流程；</li>
+<li>支付中断后，结束支付的流程；</li>
+<li>单订单支付的流程；</li>
+<li>多订单合并支付的流程；</li>
+<li>支付失败后，再次支付</li>
+<li>弱网状态下，连续点击支付功能功能，会不会支付多次；</li>
+<li>找人代付；</li>
+<li>密码错误；</li>
+<li>密码错误次数过多，是否限制；</li>
+<li><strong>支付后，有没有跳回原页面</strong></li>
+<li>支付成功后，产品购买是否成功</li>
+</ol>
+<p><strong>支付方式测试点</strong></p>
+<ol>
+<li>不同的支付方式：银行卡网银支付、支付宝支付、微信支付等；</li>
+<li>不同终端上支付：包括PC端的支付、笔记本电脑的支付、平板电脑的支付、手机端的支付等；</li>
+<li>（支付宝）<strong>支付过程中是否允无网络的情况下，可以进行打开付款码界面，被扫码支付。</strong></li>
+<li>（支付宝）<strong>支付宝付款码是否付款码每间隔一段时间会更新一次。</strong></li>
+<li>（支付宝）主动扫一扫支付，被动付款码支付</li>
+<li>（支付宝）点击主页“付钱&#x2F;收钱”按钮， 是否可以成功的调出二维码识别界面。</li>
+<li>有优惠券、折扣、促销价进行结算是否正确；</li>
+<li>优惠券&#x2F;折扣是否是必选，是否可以不选择折扣</li>
+<li>支付订单退款完成后，优惠券&#x2F;折扣是否还能使用</li>
+</ol>
+<p><strong>支付金额测试点</strong></p>
+<ol>
+<li>正常金额支付</li>
+<li>金额字段校验：非数字、sql相关字符、负数、边界值与数据库设计长度，为空是否报错  </li>
+<li>金额的最小值：0.01</li>
+<li>无意义的值：0元</li>
+<li>最大金额：设置支付的最大金额</li>
+<li>银行卡或微信等，设置每日最大消费金额或者单笔最大消费金额</li>
+<li>余额不足；</li>
+<li>是否支持添加新卡支付；</li>
+<li>付款金额和应付金额是否一致，（比如：扫描的支付二维码，和显示的应支付金额是否一致）。支付还是要走整个支付流程才行，从确认订单到最后的支付成功，任何一步都有可能有问题。</li>
+<li>支付成功后，用户的金额是否扣除成功</li>
+<li>取消支付后，退款金额是否正确</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>各种提示，是否显示正常（例如点击付款按钮取消付款，是否有提示；</li>
+<li>交互界面的设计是否便于理解、易于使用</li>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong>，</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li><p>支付的响应时间，取消支付的响应时间；</p>
+</li>
+<li><p><strong>高并发场景下用户进行支付操作的响应时间测试。</strong><br>模拟大量用户同时支付，检查一定压力下能否正常跳转。</p>
+</li>
+<li><p>中断测试：<br>支付时<strong>手机没电、断网、手机故障、系统更新、app切换</strong>（中断测试<br>支付时<strong>来电话，来信息</strong>有没有影响（中断测试<br>支付时<strong>手机重启、手机卡死</strong>（中断测试<br>支付时<strong>当前支付软件版本升级</strong>（中断测试</p>
+</li>
+<li><p><strong>弱网测试（地铁，高铁，山区）延时，丢包，fiddler，弱网时加购的响应时间</strong>. </p>
+<p>延时——超时, 2min之内没有收到请求;合理性提示.<br>丢包——系统2min之内，没有上传到服务器，做失败处理;重发机制</p>
+</li>
+<li><p><strong>不同网速下加购的响应时间</strong>3g,4g,5G,WIFI、热点，不同运营商网络</p>
+</li>
+<li><p>网络延迟，断网的响应结果</p>
+</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li>通过一些工具进行安全扫描，检查是否有安全漏洞</li>
+<li><strong>使用Fiddler拦截订单信息，并修改订单金额，或者修改订单号，</strong>(下两个订单A,B，付款时拦截订单B，并把订单B的订单号改为A订单的订单号)<strong>是否无法完成支付；</strong></li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>多平台</strong>Windows，mac、LINUX</li>
+<li><strong>移动平台</strong>android，ios</li>
+<li><strong>多浏览器</strong>chrome、IE、火狐、360等</li>
+<li>支付软件不同版本</li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="支付宝转账测试用例"><a href="#支付宝转账测试用例" class="headerlink" title="支付宝转账测试用例"></a>支付宝转账测试用例</h3><p>转账方–&gt;支付宝–&gt;收款方流程，观察测试场景</p>
+<p><strong>一、功能测试</strong></p>
+<p><strong>转账流程测试点</strong></p>
+<ol>
+<li>正常完成转账的流程；</li>
+<li>发起转账后，取消转账</li>
+<li>转账支付中断后，继续转账支付的流程；</li>
+<li>转账支付中断后，结束转账支付的流程；</li>
+<li>给单人转账</li>
+<li>给多人转账；</li>
+<li>转账人确认与校验</li>
+<li>转账失败后，再次转账</li>
+<li>弱网状态下，连续点击转账支付功能，会不会转账多次；</li>
+<li>面容支付，或者指纹，或者密码错误；</li>
+<li>密码错误次数过多，是否限制；</li>
+</ol>
+<p><strong>转账方式测试点</strong></p>
+<ol>
+<li>不同的转账支付方式：面容支付，指纹支付，密码支付等；</li>
+<li>不同终端上转账支付：包括PC端的支付、平板电脑的支付、手机端的支付等；</li>
+</ol>
+<p><strong>转账金额测试点</strong></p>
+<ol>
+<li>正常金额转账</li>
+<li>转账金额大于、等于、小于当前余额，<strong>余额不足的</strong>情况</li>
+<li><strong>金额字段校验：非数字、sql相关字符、负数、边界值与数据库设计长度，为空是否报错</strong>  </li>
+<li>金额的<strong>最小值</strong>：0.01</li>
+<li>无意义的值：0元</li>
+<li><strong>最大金额</strong>：转账的最大金额</li>
+<li>银行卡或微信等，设置每日最大转账金额或者单笔最大转账金额</li>
+<li>是否支持添加新卡转账支付；</li>
+<li>转账金额和扣款金额是否一致</li>
+<li>转账成功后，用户的金额是否扣除成功</li>
+<li>转账之后是否对方是否到账</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>各种提示，是否显示正常（例如转账，取消转账，转账确认等，是否有提示；</li>
+<li>交互界面的设计是否便于理解、易于使用</li>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong>，</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的设计风格，颜色搭配是否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li><p>转账的响应时间，取消转账的响应时间；</p>
+</li>
+<li><p><strong>高并发场景下用户进行转账操作的响应时间测试。</strong><br>模拟大量用户同时转账，检查一定压力下能否正常跳转。</p>
+</li>
+<li><p>中断测试：<br>转账时<strong>手机没电、断网、手机故障、系统更新、app切换</strong>（中断测试<br>转账时<strong>来电话，来信息</strong>有没有影响（中断测试<br>转账时<strong>手机重启、手机卡死</strong>（中断测试<br>转账时<strong>支付宝版本升级</strong>（中断测试</p>
+</li>
+<li><p><strong>弱网测试（地铁，高铁，山区）延时，丢包，fiddler，弱网时加购的响应时间</strong>. </p>
+<p>延时——超时, 2min之内没有收到请求;合理性提示.<br>丢包——系统2min之内，没有上传到服务器，做失败处理;重发机制</p>
+</li>
+<li><p><strong>不同网速下加购的响应时间</strong>3g,4g,5G,WIFI、热点，不同运营商网络</p>
+</li>
+<li><p>网络延迟，断网的响应结果</p>
+</li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li>通过一些工具进行安全扫描，检查是否有安全漏洞</li>
+<li><strong>使用Fiddler拦截转账信息，并修改转账金额，或者修改转账交易号，</strong>(下两个转账A,B，转账时拦截订单B，并把转账B的交易号改为转账A的交易号)<strong>是否无法完成支付；</strong></li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>多移动平台</strong>android，ios</li>
+<li>支付宝不同版本</li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是支持多种语言版本</strong></li>
+</ol>
+<h3 id="x3D-x3D-x3D-x3D-x3D-实物类测试-x3D-x3D-x3D-x3D-x3D"><a href="#x3D-x3D-x3D-x3D-x3D-实物类测试-x3D-x3D-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;实物类测试&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;实物类测试&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</h3><h3 id="自动售货机测试用例"><a href="#自动售货机测试用例" class="headerlink" title="自动售货机测试用例"></a>自动售货机测试用例</h3><p>功能测试<br>界面测试(外观，大小等)<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p>首先，拆解自动售货机为不同模块，存放货物区、取货区、付钱区<br><strong>一、功能测试</strong></p>
+<ol>
+<li>自动售货机的<strong>按钮能否正常使用</strong>，有没有按不动的情况</li>
+<li><strong>货物是否正常放置</strong></li>
+<li>验证用户<strong>选择饮料功能是否正确</strong>，比如选择农夫山泉最终出来的是不是农夫山泉</li>
+<li>点击货物选择按钮<strong>是否能进入支付页面</strong></li>
+<li>是否支持<strong>选择多个货物</strong></li>
+<li>是否<strong>支持硬币、纸币、微信、支付宝等方式支付</strong></li>
+<li>付了钱选择了货物，是否能正常出货</li>
+<li>验证<strong>投币付款功能</strong>是否正确，是否支持<strong>找零</strong><br>同面额的纸币硬币，有面额不接受怎么办<br>付钱不够怎么办<br>付钱多了怎么办<br>付钱多了但是没有零钱找怎么办<br>付钱不是正常的钱怎么办，比如假钱，游戏币等</li>
+<li><strong>货物是否能正常取出</strong>(有的货物过大、过小、形状不规范等)，取货口是否好拿货物（针对不同的人群，是否使用方便，孕妇、儿童、老人、成年人</li>
+<li><strong>出现故障时能否自动退款</strong></li>
+<li>货物卡住了或者钱没有退，是否有联系客服的方式</li>
+<li>屏幕是否正常播放广告</li>
+<li>屏幕是否显示二维码</li>
+<li>操作过程有没有<strong>相应的提示音</strong></li>
+<li>售货机<strong>缺货时会不会有提醒</strong></li>
+<li><strong>定价功能</strong>可否正常使用，是否支持非整数定价，像定个九块</li>
+<li><strong>优惠信息</strong>可否正常折扣，像有优惠券或打折时</li>
+<li>操作是否跟<strong>网络状态</strong>有关系（弱网、强网、无网）</li>
+<li>对于存放的货物有没有<strong>常温、冷藏、加热功能，温度能不能设置</strong><br>有效的等价类有：<br>        金额刚够，顺利出货<br>        金额超出，找零出货<br>        金额超出, 没钱找零,出货<br>        金额不足，进行提示，把货币退出<br>        金额足够，取消交易<br>        假币，不出货<br>无效等价类：<br>     投入金额，不出货，不找零<br>     投入金额，不出货，退钱<br>     金额超出，出货，不找零<br>     金额超出，不出货，找零<br>     金额不足，出货，找零l<br>     金额不足，出货，不找零<br>     金额不足，不出货，不退款<br>     金额刚够，不出货，退款<br>     金额刚够，出货，找零<br>     金额刚够，不出货，找零<br>     不投金额，直接出货</li>
+</ol>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>外观设计是否合理，售货机的<strong>大小</strong>是否合适</li>
+<li><strong>操作界面的布局</strong>搭配是否合理，不同模块的大小分配是否合理（投币口是否明显，取物口是否明显</li>
+<li>操作是否简便，流程是否复杂，使用说明是否通俗易懂</li>
+<li><strong>操作接口</strong>是否齐全</li>
+<li><strong>按钮</strong>的大小、颜色、形状是否美观，是否通俗易懂</li>
+<li>有没有设备编号、<strong>服务电话</strong>标识</li>
+<li>有没有消费者投诉电话</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li>选择商品后<strong>跳转到支付页面的时间</strong></li>
+<li>利用微信、支付宝等<strong>第三方平台支付时的响应速度</strong></li>
+<li>支付成功后<strong>商品掉落时间</strong></li>
+<li><strong>退币时的响应时间和退币速度</strong></li>
+<li>付款时<strong>突然断电</strong>，异常断电、系统故障，是否有恢复功能</li>
+<li>跟第三方支付平台的<strong>接口</strong>对接是否可用</li>
+<li>软硬件结合的效率，软硬件软件发出操作指令后，硬件的及时正确响应</li>
+<li><strong>多个用户同时扫码支付</strong></li>
+</ol>
+<p><strong>四、安全性测试</strong></p>
+<ol>
+<li>售货机上的二维码是否屏幕实时显示，刷新<strong>，防止他人恶意替换二维码</strong></li>
+<li><strong>收款码</strong>是否携带恶意病毒</li>
+<li>售货机的<strong>材料</strong>是否安全无害</li>
+<li><strong>玻璃</strong>是否易被敲碎</li>
+<li>是否漏电，下雨天会不会漏水</li>
+<li>受到外力撞击是否容易<strong>倾倒</strong></li>
+<li>售货机设计的<strong>有没有锋利的地方</strong>，会不会划伤到顾客</li>
+<li>售货机<strong>存钱的地方是否安全</strong>，会不会被他人偷取</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li>是否能在<strong>室外、室内</strong>工作</li>
+<li>是否能在<strong>高温下</strong>工作</li>
+<li>是否能在<strong>低温下</strong>工作</li>
+</ol>
+<h3 id="水杯测试用例（一次性咖啡杯、纸杯等等"><a href="#水杯测试用例（一次性咖啡杯、纸杯等等" class="headerlink" title="水杯测试用例（一次性咖啡杯、纸杯等等"></a>水杯测试用例（一次性咖啡杯、纸杯等等</h3><p>功能测试+易用性测试<br>界面测试(外观，大小)<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p><strong>一、功能测试</strong><br>盛放<strong>半杯水</strong>是否漏水<br><strong>超过水杯规定的安全线</strong>是否漏水<br>盛放<strong>一整杯水</strong>是否会溢出<br><strong>拧紧盖子，摇晃</strong>是否漏水<br><strong>水杯容量</strong>是否与需求一致 (例如需求是500ml)<br>盛放热水<strong>是否烫手</strong><br>（易用性测试）<br>杯子<strong>倒水</strong>是否方便<br>杯子<strong>喝水</strong>是否方便<br>水杯是否<strong>使用简单，容易操作</strong><br>杯子是否<strong>方便外带</strong></p>
+<p><strong>二、性能测试</strong><br>水杯<strong>耐热性</strong><br>水杯<strong>耐寒性</strong><br>水杯能够盛放<strong>热水</strong>的容量<br>水杯能够盛放<strong>冷水</strong>的容量<br>能够使用的<strong>最大次数或时间</strong><br>盖子<strong>拧多紧不会漏水</strong><br>掉在地上不易摔坏<br>能否保温，<strong>保温</strong>时长<br><strong>长时间放置</strong>是否漏水(7×24h)<br>检查水杯的<strong>最大抗压</strong>和拉扯承受力<br>杯子从<strong>不同高度掉下的损坏程度</strong><br><strong>防震性能测试</strong>：杯子加包装(有填充物) ，六面震动，检查产品是否能应对恶劣的铁路&#x2F;公路&#x2F;航空运输</p>
+<p><strong>三、界面测试</strong><br>使用手册是否对杯子的用法、限制、使用条件等有详细描述<br>水杯外观是否<strong>简单、美观</strong><br>水杯设计是否符合人体，<strong>拿着舒服</strong><br>水杯大小是否<strong>与设计一致</strong>（水杯的高、宽、容量、直径<br>水杯材质是否<strong>与需求一致</strong><br>水杯上<strong>图案</strong>是否合法，是否容易掉落，遇水是否掉落</p>
+<p><strong>四、安全性测试</strong><br>检查水杯万一被破坏，是否会伤害使用者<br>杯子使用的材质<strong>是否有毒</strong>或有细菌<br>杯子盛放热水、冷水是否有有毒气体散发（<strong>高温下材</strong>质是否释放毒性、<strong>低温下</strong>材质是否释放毒性<br>杯子是否有<strong>防滑措施</strong></p>
+<p><strong>五、兼容性测试</strong><br>除盛放水外，<strong>能否盛放果汁、碳酸饮料</strong>等<br>除盛放饮用品外，<strong>能否盛放硫酸、酒精、汽油</strong>等<br>杯子<strong>在不同地方、不同温度环境下</strong>都可以正常使用</p>
+<h3 id="矿泉水瓶测试用例"><a href="#矿泉水瓶测试用例" class="headerlink" title="矿泉水瓶测试用例"></a>矿泉水瓶测试用例</h3><p><strong>一、功能测试</strong><br>装水、喝水的功能，具体如下：</p>
+<ol>
+<li>检查矿泉水瓶的容量是否符合设计要求</li>
+<li>将空瓶和装满水的瓶子放在电子秤上，检查瓶子装满水前后的重量，是否符合设计要求。</li>
+<li>检查水瓶在装少量水、半瓶水、装满水的情况下是否会漏水；</li>
+<li>检查水瓶在装少量水、半瓶水、装满水的情况下能否喝到水；</li>
+<li>在瓶盖拧紧不漏水的情况下，分别让成年男性、成年女性和小孩尝试拧开瓶盖，看是否成功；</li>
+<li>分别将水瓶放在手中、口袋、包包、车上等不同位置，看是否方便携带</li>
+</ol>
+<p><strong>二、界面测试（外观测试</strong><br>主要是两方面，水瓶的大小、水瓶外观设计：</p>
+<ol>
+<li>瓶子的高度、底座尺寸是否符合设计要求；</li>
+<li>瓶子的口径尺寸是否符合设计要求；</li>
+<li>瓶身上的字体颜色、大小是否符合设计要求，是否有错别字；</li>
+<li>瓶身上的纹路、线条是否符合设计要求；</li>
+<li>瓶身上图标布局是否合理，其间距、大小是否符合公设计要求；</li>
+<li><strong>是否符合用户审美，用户体验感</strong></li>
+</ol>
+<p><strong>三、性能测试</strong><br>测试水瓶的抗摔、抗压、抗高低温等情况：</p>
+<ol>
+<li>将瓶子装满水后拧紧瓶盖，将其倒置或使劲摇晃、各种角度挤压，看是否漏水或破裂。</li>
+<li>将空瓶、半瓶水、满瓶水分别从不同的高度（1m、3m、8m、15m）摔下来，看瓶子是否摔坏，是否漏水；</li>
+<li>将空瓶和半瓶水、满瓶水分别放置于不同温度下（冰箱、室内和太阳光高温）下一段时间（1天，10天，1个月，6个月），观察瓶子是否漏水，瓶身是否破裂；</li>
+<li>将空瓶、装半瓶水的瓶子、装满水的瓶子分别置于水平桌面上，用电风扇吹桌面上的瓶子，调节电风扇的风力大小，观察瓶子是否会被吹倒或吹走</li>
+<li>满瓶的水加包装后，六面震动，检查产品是否能应对铁路&#x2F;公路&#x2F;航空等运输环境。</li>
+</ol>
+<p><strong>四、安全性测试</strong><br>测试水瓶使用时是否会伤害到人、是否产生对人体有害物质等：</p>
+<ol>
+<li><p>用手去抚摸瓶身的内壁和外壁，是否感觉光滑舒适不刺手；</p>
+</li>
+<li><p>用矿泉水瓶喝水，并转动瓶口，感受瓶口是否圆滑；</p>
+</li>
+<li><p>空瓶长时间放置一段时间（一个月、三个月、半年），一起检测是否产生塑化剂或细菌；</p>
+</li>
+<li><p>将空瓶子燃烧掉，观察燃烧时的火焰，闻燃烧时的气味，查看燃烧的残留物是否符合材质的燃烧特性，是否产生有害的毒气。</p>
+</li>
+<li><p>矿泉水瓶分别装满不同液体（水、碳酸饮料、果汁等），放置一段时间，看瓶身是否与液体之间发生化学反应，是否产生有毒物质或细菌；</p>
+</li>
+<li><p>矿泉水瓶中装入热水（或放入微波炉），观察瓶子是否变形，是否有异味产生</p>
+</li>
+<li><p>用手轻拿装满水的瓶子，看是否轻易掉落，是否有防滑措施；</p>
+</li>
+<li><p>矿泉水瓶分别装入不同温度（30℃、60℃、80℃）的水，用手感受瓶身温度，看是否会烫手，因为感受不到的话更容易烫嘴。；</p>
+</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li>瓶中分别装入碳酸饮料、果汁、咖啡、茶水、油类等液体，放置一段时间是否变味；</li>
+<li>瓶中是否可以装入固体例如饼干、沙子，石头等），且瓶子与装入的固体是否会发生化学反应。</li>
+</ol>
+<p>But，还没有结束。如果更近一步，可以从测试手段上进行进一步的思考。<strong>你是希望测试一个矿泉水瓶呢还是一百万个？</strong>测试一个的话手动就行了。如果是一百万个？只能借助机器，用自动化的方式来实现了。再比如稳定性测试中，<strong>瓶盖是需要开启十次还是一万次</strong>？十次手动做做还可以接受，一万次扭下来估计手也要废掉了。所以必须考虑自动化。诸如此类</p>
+<p>在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路。</p>
+<h3 id="一个网站测试用例"><a href="#一个网站测试用例" class="headerlink" title="一个网站测试用例"></a>一个网站测试用例</h3><p>首先，查找需求说明、网站设计等相关文档，分析测试需求。<br>制定测试计划，确定测试范围和测试策略，一般包括以下几个部分：功能性测试；界面测试；性能测试；数据库测试；安全性测试；兼容性测试<br>设计测试用例：<br>功能性测试<br>可以包括，但不限于以下几个方面：<br>链接测试。链接是否正确跳转，是否存在空页面和无效页面，是否有不正确的出错信息返回。<br>提交功能的测试。<br>多媒体元素是否可以正确加载和显示。<br>多语言支持是否能够正确显示选择的语言等。<br>界面测试<br>可以包括但不限于一下几个方面：<br>页面是否风格统一，美观<br>页面布局是否合理，重点内容和热点内容是否突出<br>控件是否正常使用<br>对于必须但未安装的控件，是否提供自动下载并安装的功能<br>文字检查<br>性能测试<br>一般从以下两个方面考虑：<br>压力测试；负载测试；强度测试<br>数据库测试要具体决定是否需要开展。数据库一般需要考虑连结性，对数据的存取操作，数据内容的验证等方面。</p>
+<p>安全性测试：</p>
+<p>基本的登录功能的检查<br>是否存在溢出错误，导致系统崩溃或者权限泄露<br>相关开发语言的常见安全性问题检查，例如SQL注入等<br>如果需要高级的安全性测试，确定获得专业安全公司的帮助，外包测试，或者获取支持<br>兼容性测试，<br>根据需求说明的内容，确定支持的平台组合：<br>浏览器的兼容性；<br>操作系统的兼容性；<br>软件平台的兼容性；<br>数据库的兼容性<br>开展测试，并记录缺陷。合理的安排调整测试进度，提前获取测试所需的资源，建立管理体系（例如，需求变更、风险、配置、测试文档、缺陷报告、人力资源等内容）。<br>定期评审，对测试进行评估和总结，调整测试的内容。</p>
+<h3 id="App测试用例"><a href="#App测试用例" class="headerlink" title="App测试用例"></a>App测试用例</h3><p>（1）APP的功能性测试<br>功能测试都是我们首要测试的，只有功能实现了才算符合上线发布的最低标准。我们需要检测产品功能是否已实现、产品功能是否符合设计要求、产品功能是否有重复、产品是否有重复的功能<br>（2）APP易用性测试<br>检测界面是否美观、操作是否简单易用，符合用户的操作行为、产品是否有相关的帮助文档<br>（3）APP兼容性测试<br>检测与本地及主流APP是否兼容、各设备是否兼容（不同手机屏幕分辨率的兼容性、不同手机品牌的兼容性、不同手机操作系统的兼容性）<br>（4）APP交叉事件测试（也属于功能测试的范畴）<br>检测APP运行时前&#x2F;后台切换是否影响正常功能、APP运行时拨打&#x2F;接听电话APP是否能正常响应、APP运行时发送&#x2F;接收信息APP是否能正常响应、<br>APP运行时发送&#x2F;收取邮件APP能否正常响应、APP运行时浏览网络能否正常响应、APP运行时使用蓝牙传送&#x2F;接收数据APP是否能正常响应<br>（5）APP安全性测试<br>检测软件是否有正规的数字签名、软件程序是否有加密、敏感数据是否有脱敏显示、数据传输时是否有加密、安全性漏洞、系统漏洞<br>（6）APP可靠性测试<br>验证程序中影响软件可靠性的故障，并排除故障实现软件可靠性增长、验证软件当前的可靠性水平是否满足用户的要求、验证软件的数据备份、恢复<br>（7）APP性能测试<br>检测程序在正常情况、峰值情况下的系统的各项性能指标是否正常。性能指标主要有：响应时间（应用响应时间从发出请求开始到客户端接收到响应所消耗的时间）、最大并发用户数、吞吐量、CPU内存占用、耗电量、流量</p>
+<h3 id="一个口罩测试用例"><a href="#一个口罩测试用例" class="headerlink" title="一个口罩测试用例"></a>一个口罩测试用例</h3><ul>
+<li>测试一个口罩<br>我当时从性能、功能、外观、系统、压测、运输、易用性、移植性等测试的，然后反问环节面试官说我对测试基础知识不太了解。。。他也没问我测试方法，就测试一个口罩，不知道为什么就被贴标签了。。。而且我看网上都是这么测的，也没标准答案，大家可以讨论一下</li>
+</ul>
+<p>后来我想到这么测<br>大方向 单元测试（把口罩拆成各个部分）、集成（不同单元组合测试）、系统（性能、功能、外观、系统、压测、运输、易用性、移植性等）、回归、验收 前三步可以穿插黑盒白盒测试方法，总结起来就是你知道啥流程、方法都套进去，估计那个面试官想让我这么测，这个方法还是搜集了很多资料慢慢总结出来的</p>
+<h3 id="洗衣机测试用例"><a href="#洗衣机测试用例" class="headerlink" title="洗衣机测试用例"></a>洗衣机测试用例</h3><p>功能测试：该洗衣机是否能正常的洗衣服，能否预约，按钮设置是否都可用等等等<br>需求测试：查看洗衣机的使用说明书和安全说明书等<br>性能测试：使用时用电量如何，是否满足用户需求<br>界面测试：洗衣机的外观是否满足客户的需求<br>易用测试：该洗衣机是否容易操作<br>兼用性测试：该洗衣机除了能洗衣服以外还能洗别的吗<br>安全性测试：该洗衣机通电以后人接触以后是否有电，童锁<br>负载测试：通过逐步增加系统负载，最终确定在什么负载条件下系统性能将处于崩溃状态，以此获得系统能提供的最大服务<br>压力测试：通过逐步增加系统负载，最终确定在什么负载条件下系统性能将处于崩溃状态，以此获得系统能提供的最大服务级别的测试。<br>稳定性测试：加到一定的衣服然后过一段时间看洗衣机是否正常洗</p>
+<h3 id="电梯测试用例"><a href="#电梯测试用例" class="headerlink" title="电梯测试用例"></a>电梯测试用例</h3><p>1.功能测试：上升、下降、停止、开门、关门、梯内电话、灯光、指示灯等；<strong>每个单元测试后进行集成测试。</strong><br>2.性能测试：速度、反应时间、关门时间等；<br>3.压力测试：超载、尖锐物碰撞电梯壁等；<br>4.安全测试：停电、报警装置、轿箱停靠位置、有人扒门时的情况等；<br>5.可用性：按键高度、操作是否方便、舒适程度等；<br>6.UI测试：美观程度、光滑程度、形状、质感等；<br>7.稳定性测试：长时间运行情况等；<br>8.兼容性测试：不同电压是否可工作、不同类型电话是否可安装等。</p>
+<p>功能测试：<br>1.测试电梯能否实现正常的上升和下降功能。<br>2.电梯的按钮是否都可以使用。<br>3.电梯门的打开，关闭是否正常。<br>4.报警装置是否可用。<br>5.<strong>与其他电梯之间是否协作良好。</strong><br>6.通风状况如何。<br>7.突然停电时的情况。<br>8.上升途中的响应。<br>1）电梯本来在1楼，如果有人按18楼，那么电梯在上升到5楼的时候，有人按了10楼，这时候是否会在10楼先停下来；<br>2）电梯下降到10层时显示满员，此时若8层有人等待电梯，是否在8层停。<br>9.<strong>是否有手机信号</strong></p>
+<p>安全性：<br>1.门关上的一刹那出现障碍物。<br>2.同时按关门和开门按钮。<br>3.点击当前楼层号码<br>4.多次点击同一楼层号码<br>5.同时按上键和下键</p>
+<p>易用性：<br>电梯的按钮的设计符合一般人的习惯吗<br>用户文档：<br>使用手册是否对电梯的用法、限制、使用条件等有详细的描述<br>压力测试：<br>1.看电梯的最大承重量，在负载过重时报警装置是否有提醒<br>2.在一定时间内不断让电梯上升、下降<br>稳定性测试：<br>看电梯在最大负载下平稳运行的最长时间</p>
+<h3 id="判断IP地址是否合法的测试用例"><a href="#判断IP地址是否合法的测试用例" class="headerlink" title="判断IP地址是否合法的测试用例"></a>判断IP地址是否合法的测试用例</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mrwuzs/p/8028373.html">https://www.cnblogs.com/mrwuzs/p/8028373.html</a>  看这个！！！打开链接看</p>
+<p>等价类划分</p>
+<p>首先把IP地址分成有效可用的IP地址和有效但不可用的IP地址两个<strong>等价类</strong>；其中有效可用的IP地址中包括IP地址的A，B，C三类地址，有效但不可用的IP地址包括D、E两类IP地址和A、B、C三类地址中的全网地址、广播地址以及回环地址。</p>
+<p>如果是有效的 IPv4 地址，有效可用，有效不可用，（边界值等等）<br>如果是有效的 IPv6 地址<br>无效的</p>
+<h3 id="测试人脸识别系统"><a href="#测试人脸识别系统" class="headerlink" title="测试人脸识别系统"></a>测试人脸识别系统</h3><p>功能测试<br>界面测试<br>性能测试<br>安全性测试<br>兼容性测试</p>
+<p>人脸识别设计到AI的两个概念：<br>计算机视觉（机器视觉）和生物识别。由此展开测试寻找测试点<br>AI测试与传统测试的异同点：<br>AI测试需要结合AI架构，算法，应用场景等针对测试。<br>这里的人脸查准率和人脸设定阈值有关系<br>设定阈值的过程就是模型评估，阈值设定越低，通过率越高，误报率越低<br>阈值设置越高，通过率越低，误报率越高</p>
+<p><strong>一、功能测试</strong><br>1、启动系统，是否能跳转到正确的页面<br>2、人脸检测<br>人脸&#x2F;非人脸（拍摄的不是人脸，结果的验证<br>对人脸属性进行验证(年龄、性别、种族、表情、脸型、是否戴眼镜)<br>照相功能、打开摄像头功能、关闭摄像头功能、按钮的验证<br>检测状态(动态和静态)（静态指图片，动态指活体检测）<br>光线(强弱、顺逆)<br>人脸截取是否合理（拍摄人脸面积的不同，结果的验证<br>单脸&#x2F;多脸检测（拍摄多个人，结果的验证；多次拍摄同一个人的照片,结果的验证<br>检测距离、距离远近与结果的关系<br>检测姿势(拍摄角度不同，结果的验证<br>遮挡&#x2F;衣着影响（同一个人穿衣不同，结果的验证<br>抓拍&#x2F;正常拍<br>3、人脸对比<br>选择&#x2F;上传图片，图片类型、路径、大小、清晰度、像素、按钮验证<br>显示图片，与上传图片是否一致、显示顺序<br>两次传入同一张图<br>传入图像的类型不符合<br>后台做增删查改后再次人脸验证<br>按钮验证<br>结果的验证：<br>    上传同一张图像<br>    上传不同的图像<br>    上传不是人脸图像的结果验证<br>4、异常检测<br>网络测试：断网、弱网、网络正常<br>中断测试：<br>占用摄像头(拍摄、录像、关闭摄像头)<br>系统没电、断网、系统故障、系统更新（中断测试<br>手机来短信，来电话<br>系统重启、系统卡死（中断测试<br>系统版本升级（中断测试<br>不合法图片or选择不是人脸图像的文件上传</p>
+<p>提示语：执行不同功能，后台消息打印的验证</p>
+<p><strong>二、界面测试</strong></p>
+<ol>
+<li>查看界面<strong>是否显示正确，布局是否合理</strong></li>
+<li>界面是否<strong>简单，美观</strong></li>
+<li>界面文字是否显示清晰，图片和图标显示正常</li>
+<li>是否有<strong>错别字</strong></li>
+<li>操作过程中出现的<strong>各种提示显示正常</strong>。</li>
+<li>按钮、控件是否整齐，长度高度是否符合要求</li>
+<li>界面的<strong>设计风格</strong>，<strong>颜色搭配是</strong>否合理，是否符合UI设计风格</li>
+</ol>
+<p><strong>三、性能测试</strong></p>
+<ol>
+<li>检测速度、响应速度</li>
+<li>精准率</li>
+<li><strong>多人检测的响应时间测试。</strong></li>
+<li>高并发场景，模拟多用户同时进入人脸识别系统检测</li>
+<li>频繁进行人脸识别，是否易卡顿、崩溃</li>
+<li><strong>弱网测试（地铁，高铁，山区）延时，丢包，fiddler，弱网时加购的响应时间</strong>.<br>延时——超时, 2min之内没有收到请求;合理性提示.<br>丢包——系统2min之内，没有上传到服务器，做失败处理;重发机制</li>
+<li><strong>不同网速下的响应时间</strong>3g,4g,5G,WIFI、热点，不同运营商网络</li>
+<li>网络延迟，断网的响应结果</li>
+</ol>
+<p><strong>四、安全性测试</strong><br>活体检测、连续检测、3D检测</p>
+<ol>
+<li>活体检测：判断用户是否为正常操作，通过指定用户做随机动作，一般有张嘴、摇头、点头、凝视、眨眼等等，防止照片攻击。 判断用户是否真实在操作，指定用户上下移动手机，防止视频攻击和非正常动作的攻击。</li>
+<li>3D检测：验证采集到的是否为立体人像，能够防止平面照片、不同弯曲程度的照片等。</li>
+<li>连续检测：通过连续的检测，验证人脸运动轨迹是否正常，防止防止跳过活体检测直接替换采集的照片，也能够防止中途切换人。</li>
+</ol>
+<p><strong>五、兼容性测试</strong></p>
+<ol>
+<li><strong>不同手机型号，不同手机操作系统</strong>，是否都可以进行正常的识别功能（安卓系统、ios系统，主流的系统版本需要测试覆盖）</li>
+<li><strong>不同的电脑机型，不同的电脑操作系统</strong>（win7,8,10,mac,linux</li>
+<li><strong>不同的人脸识别系统版本</strong></li>
+<li>不同的分辨率下显示是否正常。</li>
+<li><strong>不同语言环境下，页面的显示是否正确，是否支持多种语言版本</strong></li>
+</ol>
+<hr>
+<p>微信注册页面密码的测试用例编写</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/niuniu0328/p/14721497.html">https://www.cnblogs.com/niuniu0328/p/14721497.html</a></p>
+<p><strong>要求：</strong> 6~18位且由数字和字母组成，注册成功,跳转页面；注册失败，请重新输入密码</p>
+<ol>
+<li>画思维导图</li>
+</ol>
+<img src="https://img2020.cnblogs.com/blog/1890611/202104/1890611-20210430113231014-818663855.png" alt="img" style="zoom:50%;" />
+
+<ol start="2">
+<li>excel编写测试用例</li>
+</ol>
+<p><img src="https://img2020.cnblogs.com/blog/1890611/202104/1890611-20210430114549487-1107512808.png" alt="img"></p>
+<h2 id="☆☆☆定位bug、定位前后端问题☆☆☆"><a href="#☆☆☆定位bug、定位前后端问题☆☆☆" class="headerlink" title="☆☆☆定位bug、定位前后端问题☆☆☆"></a>☆☆☆定位bug、定位前后端问题☆☆☆</h2><p>什么情况下用数据库，Linux，fiddler</p>
+<p>用数据库</p>
+<ul>
+<li>修改数据，方便测试</li>
+<li>校验数据落地，比如你充值了1万，页面显示你充值成功，所以到底成没成功，要去看数据库</li>
+</ul>
+<p>用Linux</p>
+<p>（Xshell连Linux，cd到日志存放的地方，一般日志分小时去切割，日志号一般般根据设备号或者手机号去筛选</p>
+<ul>
+<li>查看日志</li>
+<li>埋点&#x2F;打点测试，比如要新增两个功能，读书，看视频，想看有多少人点击了，收集行为，每点一个按钮，都会发送日志，向后台发送json，应该是点一次打一个，需要看有没有多打，点一次打三个就是bug了</li>
+</ul>
+<p>用fiddler，charles</p>
+<ul>
+<li>手工测不出来</li>
+<li>看重要请求有没有加密，能不能篡改</li>
+<li>请求会不会重复发送（滴滴打车，会不会同时呼叫了好几个司机</li>
+</ul>
+<p>抓包的方式，获取请求数据和响应的数据，然后去对应开发人员提供的接口文档</p>
+<p>如果请求数据有问题，那么这就是客户端的问题，如果在这种情况下还是无法定位这个bug的话，</p>
+<p>可以通过接口测试的方式来定位，比如说登录功能，正确的用户名正确的密码，如果用app来登录的话，提示失败</p>
+<p>而使用接口测试的方式来进行登录的话，提示成功，这种情况下就可以判断出，这个bug是属于前端的bug</p>
+<h3 id="成功购买后，查看订单有商品没有显示出来"><a href="#成功购买后，查看订单有商品没有显示出来" class="headerlink" title="成功购买后，查看订单有商品没有显示出来"></a>成功购买后，查看订单有商品没有显示出来</h3><p>假设你在某购物网站上购买了两件商品，一件打折的，一件不打折，当你下完订单并且成功支付之后，再次去我的订单中查看订单内容时，发现两件商品，只显示出来一件， 而打折的商品并没有显示出来。</p>
+<p><strong>1、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志话，分别查看购买记录和订单相关的日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果显示出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以再去看数据库</li>
+</ul>
+<p><strong>2、查看数据库，一些select查询语句</strong></p>
+<ul>
+<li>查看订单表数据是否正常<ul>
+<li>如果数据库没有记录，说明是后端的问题（因为，你已经下完订单并且成功支付了</li>
+<li>如果数据库有记录，可以去抓包</li>
+</ul>
+</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<ul>
+<li>抓前端查看订单请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上</li>
+</ul>
+</li>
+</ul>
+<h3 id="如果出现加入购物车商品，再结账时不正确，怎么定位异常？"><a href="#如果出现加入购物车商品，再结账时不正确，怎么定位异常？" class="headerlink" title="如果出现加入购物车商品，再结账时不正确，怎么定位异常？"></a>如果出现加入购物车商品，再结账时不正确，怎么定位异常？</h3><p><strong>1、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志话，分别查看加入购物车记录和订单相关的日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果显示出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以再去看数据库</li>
+</ul>
+<p><strong>2、查看数据库，一些select查询语句</strong></p>
+<ul>
+<li>查看加入购物车商品数据是否正常<ul>
+<li>如果数据库没有记录，说明是后端的问题（因为，你已经加入购物车，但是数据库里没有</li>
+<li>如果数据库有记录，可以去抓包</li>
+</ul>
+</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<ul>
+<li>抓前端查看订单请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上</li>
+</ul>
+</li>
+</ul>
+<h3 id="如果A给B评论了但是没显示可能是什么原因造成的（例如微信评论）"><a href="#如果A给B评论了但是没显示可能是什么原因造成的（例如微信评论）" class="headerlink" title="如果A给B评论了但是没显示可能是什么原因造成的（例如微信评论）"></a>如果A给B评论了但是没显示可能是什么原因造成的（例如微信评论）</h3><p><strong>1、排除本身网络的问题，先确保网络连接通畅。</strong>是谁没显示？排除网络问题先</p>
+<p><strong>3、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志话，分别查看发送评论请求与响应的相关日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果渲染出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以去抓包</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<p>从接口请求，参数，接口响应来分析</p>
+<ul>
+<li>抓前端查看请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上</li>
+</ul>
+</li>
+</ul>
+<h3 id="视频不能播放了，定位错误"><a href="#视频不能播放了，定位错误" class="headerlink" title="视频不能播放了，定位错误"></a>视频不能播放了，定位错误</h3><p>排除本身网络的问题，先确保网络连接通畅。</p>
+<p>前端APP崩溃，肯定前端的问题</p>
+<p>如果是别的问题，通过抓包分析</p>
+<ul>
+<li>抓前端请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>如果后端返回的值正确的话，就查看前端读取值进行处理读取的是否正确</li>
+</ul>
+</li>
+</ul>
+<h3 id="朋友圈刷不出来了怎么排查"><a href="#朋友圈刷不出来了怎么排查" class="headerlink" title="朋友圈刷不出来了怎么排查"></a>朋友圈刷不出来了怎么排查</h3><p><strong>1、排除本身网络的问题，先确保网络连接通畅。</strong></p>
+<p>如果切换网络测试，其他app应用都能正常访问，那么说明是微信服务器的问题</p>
+<p><strong>2、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志的话，分别查看朋友圈请求与响应的相关日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果显示出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以去抓包</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<p>从接口请求，参数，接口响应来分析</p>
+<ul>
+<li>抓前端查看请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上</li>
+</ul>
+</li>
+</ul>
+<h3 id="点击购买后页面加载不出来，怎么排查？"><a href="#点击购买后页面加载不出来，怎么排查？" class="headerlink" title="点击购买后页面加载不出来，怎么排查？"></a>点击购买后页面加载不出来，怎么排查？</h3><p><strong>1、排除本身网络的问题，先确保网络连接通畅。</strong></p>
+<p>如果切换网络测试，其他app应用都能正常访问，那么说明是服务器的问题</p>
+<p><strong>2、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志的话，分别查看购买的请求与响应的相关日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果显示出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以去抓包</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<p>从接口请求，参数，接口响应来分析</p>
+<ul>
+<li>抓前端查看请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上</li>
+</ul>
+</li>
+</ul>
+<h3 id="微信抢红包测试，如果按钮失灵怎么定位问题"><a href="#微信抢红包测试，如果按钮失灵怎么定位问题" class="headerlink" title="微信抢红包测试，如果按钮失灵怎么定位问题"></a>微信抢红包测试，如果按钮失灵怎么定位问题</h3><p><strong>1、排除本身网络的问题，先确保网络连接通畅。</strong></p>
+<p>2、排除手机故障问题，排除屏幕失灵问题</p>
+<p><strong>3、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志话，分别查看抢红包请求与响应的相关日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果渲染出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以去抓包</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<p>从接口请求，参数，接口响应来分析</p>
+<ul>
+<li>抓前端查看请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上</li>
+</ul>
+</li>
+</ul>
+<h3 id="有用户反应邀请好友给她砍一刀没有成功怎么排查"><a href="#有用户反应邀请好友给她砍一刀没有成功怎么排查" class="headerlink" title="有用户反应邀请好友给她砍一刀没有成功怎么排查"></a>有用户反应邀请好友给她砍一刀没有成功怎么排查</h3><p><strong>1、排除本身网络的问题，先确保网络连接通畅。</strong></p>
+<p><strong>2、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志话，分别查看砍价的请求与响应的相关日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果渲染出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以去抓包</li>
+</ul>
+<p><strong>3、查看数据库，一些select查询语句</strong></p>
+<ul>
+<li>查看加入砍价商品的数据是否正常<ul>
+<li>如果数据库没有记录，说明是后端的问题（因为，前端已经显示砍价成功，但是数据库里没有记录</li>
+<li>如果数据库有记录，可以去抓包</li>
+</ul>
+</li>
+</ul>
+<p><strong>4、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<p>从接口请求，参数，接口响应来分析</p>
+<ul>
+<li>抓前端查看请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染，显示在页面上，没成功，但是显示砍价成功，这就是错误的渲染</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户反映你开发的网站访问很慢可能会是什么原因。"><a href="#用户反映你开发的网站访问很慢可能会是什么原因。" class="headerlink" title="用户反映你开发的网站访问很慢可能会是什么原因。"></a>用户反映你开发的网站访问很慢可能会是什么原因。</h3><p>（1）可能的原因一：服务器出口带宽不够用。这是一个很常见的瓶颈。一方面，可能是本身购买的服务器出口带宽就很小（企业购买带宽相当昂贵），一旦用户访问量上来了，并发量大了，自然均分给用户的出口带宽就更小了，所以某些用户的访问速度就会下降了很多。另一个，就是跨运营商网络导致带宽缩减，例如很多公司的网站（服务器）是放在电信的网络上的，而如果用户这边对接的是长城或者说联通的宽带，运营商之间网络传输在对接时是会有限制的，这就可能导致带宽的缩减。</p>
+<p>（2）可能原因二：服务器负载过大忙不过来，比如说CPU和内存消耗完了，这个容易理解，不展开。</p>
+<p>（3）可能原因三：网站的开发代码没写好，例如mysql语句没有进行优化，导致数据库的读写相当耗费时间。</p>
+<p>（4）可能原因四：数据库的瓶颈，也是很常见的一个瓶颈，这点跟上面第三个原因可以一起来说。当我们的数据库变得愈发庞大，比如好多G好多T这么大，那对于数据库的读写就会变得相当缓慢了，索引优化固然能提升一些效率，但数据库已经如此庞大的话，如果每次查询都对这么大的数据库进行全局查询，自然会很慢。这个学过数据库的话也是挺容易理解的。</p>
+<p>二、针对上面可能的原因，有哪些方法和工具去检测呢：</p>
+<p>（1）某个用户反馈网站访问变慢，怎么去定位问题。首先你自己也打开下网站，看是否会出现用户反映的问题，如果你这边访问没问题，那就可能是用户那边的问题了，这块就是要先确定是用户那一方的问题还是自身比如说服务器或者网站的问题。</p>
+<p>（2）发现确实是自己服务器或者网站的问题，那么可以利用浏览器的调试功能（一般浏览器都会有），调试网络看看各种数据加载的速度，哪一项消耗了多少时间都可以看到，是哪块数据耗时过多，是图片加载太慢，还是某些数据加载老半天都查不出来。</p>
+<p>（3）然后针对服务器的负载情况，可以去查看下服务器硬件（网络带宽、CPU、内存）的消耗状况。带宽方面查看流量监控看是不是已经到了峰值，带宽不够用了，如果是公司自己买服务器搭的网站服务器的话，需要自己搭建监控环境；如果用的是阿里云腾讯云这些的，那这些平台那边会提供各方面的监控比如CPU、带宽等等，在后台就可以看到了。</p>
+<p>（4）如果发现硬件资源消耗都不高，都比较充裕，那要去看看是不是程序的问题了。这个可以通过查日志来找，比如PHP日志、Apache日志、mysql日志等等的错误日志，特别如mysql有个慢查询的日志功能，可以看到是不是某条mysql语句特别慢，如果某条语句花的时间太长，那这条语句很有可能有问题。</p>
+<p>（5）至于说到的数据库太庞大，这个直接看就看得到了，比如一个表的文件大小变得特别大了。</p>
+<p>三、针对上面的这些问题，有哪些解决和优化的办法呢：</p>
+<p>（1）出口带宽的问题，这个很简单，加带宽，有钱就多买带宽，很简单。</p>
+<p>（2）mysql语句优化，开发人员职责。</p>
+<p>（3）数据库太庞大，为了读写速度，进行“拆表”、“拆库”，就是把数据表或者数据库进行拆分。</p>
+<p>（4）上面的拆库拆表都是针对数据库实在太庞大才会这样做，一般在此之前会有其他优化方法，比如mysql的主从复制，一台主服务器专门用于写，然后其他从服务器用来读，写完之后会同步更新到其他读的服务器中。例如阿里的双十一活动，都不知道用了多少万台服务器一起在扛着。</p>
+<p>（6）还有这几年用得比较多的非关系型数据库，它使用了缓存机制，它把数据缓存到了内存，用户访问数据直接从内存读取，读取速度就比在磁盘中读取快了很多，还有它的一个key-value读取机制。</p>
+<p>（7）CDN（content-delivery-network：内容分发网络），鸡蛋放在多个篮子里，把数据放在离用户更近的位置（例如网站的一些静态文件比如图片或者js脚本），用户访问时判断IP来源是广州，那就通过智能DNS解析到广州的服务器上，直接从广州的篮子里去获取数据，速度就快了。这里有个静态数据和动态数据的概念，例如图片和一些js文件一般是不变的，那就可以把它们的映像分布到全国各地，加快速度，而一些需要在网站后台动态产生的一些数据，则需要去到网站所在的服务器去产生并得到。这个涉及到两种数据的显示的问题，这就交由浏览器处理了。同时异步加载的技术例如前端的Ajax技术，异步请求数据，可以使这些动态数据延迟加载，这块自己不怎么了解，可能表述不好。前端开发的人员应该更懂一些。</p>
+<p>（8）上面都没有说到架构的优化，如果网站扛不住，是不是网站架构已经不能适应了，比如做个小博客把数据库服务器和web服务器都用同一台服务器，那所有负载都在同一台服务器上了。但是访问量上来扛不住了，就得加服务器了，就得在架构上优化了，比如在数据库上做集群，在web服务器上也做集群，比如web服务器集群，在服务器前面加一个负载均衡，负载均衡就是专门负责分发，把用户的请求均匀分布到各个服务器上。</p>
+<h3 id="浏览器打不开是什么原因？（输入一个URL，但是没有访问到预期的网站"><a href="#浏览器打不开是什么原因？（输入一个URL，但是没有访问到预期的网站" class="headerlink" title="浏览器打不开是什么原因？（输入一个URL，但是没有访问到预期的网站"></a>浏览器打不开是什么原因？（输入一个URL，但是没有访问到预期的网站</h3><p>1.网络断开了<br>2.是否数据库问题<br>3.是否被攻击了，网页被劫持了。请求或者响应在网络传输中途被劫走了<br>4.DNS无法解析网址<br>5.服务器负载过大，服务器是不是挂了，服务器拒绝访问<br>6.链路本身问题，供应商网络出口出现问题</p>
+<p><strong>1、排除本身网络的问题，先确保网络连接通畅。</strong></p>
+<p><strong>2、有权限的话，查看服务器日志</strong>，grep,tail等命令 </p>
+<ul>
+<li>有日志话，分别查看访问的请求与响应的相关日志</li>
+<li>查看前端请求是否正常<ul>
+<li>请求不正确，前端的问题</li>
+<li>请求参数正确<ul>
+<li>查看服务器返回的结果<ul>
+<li>如果服务器返回结果错误，后端的问题</li>
+<li>如果服务器端返回结果正确，前端的问题（因为，前端没有将正确的结果渲染出来</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>没有日志的话，可以去抓包</li>
+</ul>
+<p><strong>3、抓包，用抓包工具，例如Fiddler、Charles</strong></p>
+<p>从接口请求，参数，接口响应来分析</p>
+<ul>
+<li>抓前端查看请求<ul>
+<li>前端<strong>是否发送请求</strong>，没有发送请求的话，说明是前端问题</li>
+<li>如果前端发送了请求，查看前端发送的请求格式是否正确，<strong>请求参数错误，前端问题</strong></li>
+<li>前端去调后端，请求是否接通。<strong>没接通，查看服务器是不是挂了</strong></li>
+<li>如果<strong>请求参数正确</strong>，请求接通，可以正常连接，<strong>再去抓服务器返回结果</strong></li>
+</ul>
+</li>
+<li>抓服务器返回结果<ul>
+<li>服务器返回数据错误，后端问题</li>
+<li>服务器返回数据正确，前端问题（因为，前端没有将正确的结果渲染</li>
+</ul>
+</li>
+</ul>
+<h2 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h2><h3 id="接口测试用例设计思路（支付为例"><a href="#接口测试用例设计思路（支付为例" class="headerlink" title="接口测试用例设计思路（支付为例"></a>接口测试用例设计思路（支付为例</h3><p>通用信息校验：如检查URL，请求方法，请求头，接口鉴权<br>接口参数校验：检查参数长度，类型，有效性等</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210802174556676.png" alt="image-20210802174556676"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210802180655735.png" alt="image-20210802180655735"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210802182434137.png" alt="image-20210802182434137"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210802183648664.png" alt="image-20210802183648664"></p>
+<h3 id="什么是接口测试"><a href="#什么是接口测试" class="headerlink" title="什么是接口测试"></a>什么是接口测试</h3><p>接口测试其实最主要的<strong>验证接口逻辑，可用性，边界值，异常检查.</strong></p>
+<p>接口测试是测试系统组件间接口的一种测试。接口测试主要用于检测外部系统与系统之间以及内部各个子系统之间的交互点。测试的重点是要检查数据的交换，传递和控制管理过程，以及系统间的相互逻辑依赖关系等（通俗来说就是，检查业务逻辑是否满足业务需求，校验字段是否正常你实际结果是否满足预期）</p>
+<p>一般来说，测试接口，就是指测试接口的功能，性能和稳定性测试，当然可能还有安全性测试。<br><strong>一般来说我们听说到的接口基本上都是指HTTP或者HTTPS协议的接口测试，也就是一些web服务请求。</strong></p>
+<p>一个软件项目中，有很多接口，少的有几十个，多的有几百上千个接口。<br>这个时候，我们没有软件界面，没有具体的测试场景，<strong>只有一个接口描述文档</strong>。</p>
+<p>我们需要把接口这样抽象的东西，通过软件测试的理论和方法去测试接口，找出接口的功能和安全性的缺陷。接口有内部接口和外部接口。内部接口就是开发人员自己开发的接口。外部接口，好比网站调用微信支付和支付宝支付接口。还有一些模块与模块之间的接口。</p>
+<h3 id="为什么要做接口测试"><a href="#为什么要做接口测试" class="headerlink" title="为什么要做接口测试"></a>为什么要做接口测试</h3><p>1、<strong>现在很多系统前后端架构是分离的，因为不同端（前段，后端）的工作进度不一样</strong>，所以我们要针对最开始出来的接口，以及需要调用其他公司的（银行，支付宝，微信，qq等）一些接口进行接口测试及验证数据。</p>
+<p>从安全层面来说，只依赖前端进行限制已经完全不能满足系统的安全要求（绕过前端太容易了）， 需要后端同样进行控制，在这种情况下就需要从接口层面进行验证。在这种情况下就需要从接口层面进行验证。前后端传输、日志打印等信息是否加密传输也是需要验证的，特别是涉及到用户的隐私信息，如身份证，银行卡等。</p>
+<p>2、如今系统越来越复杂，传统的靠前端测试已经大大降低了效率，而且现在我们都推崇测试前移也叫测试左移，<strong>希望测试能更早的介入，那接口测试就是一种及早介入的方式</strong>。例如<strong>传统测试，你是不是得等前后端都完成你才能进行测试</strong>，才能进行自动化代码编写。 而<strong>如果是接口测试，只需要前后端定义好接口，那这时自动化就可以介入编写接口自动化测试代码</strong>，手工测试只需要后端代码完成就可以介入测试后端逻辑而不用等待前端工作完成。</p>
+<p>举例：</p>
+<p>例如一个登陆接口，例如产品上规定用户名6-10个字符数字下划线，但后端没做判断。但我们业务人员测试肯定验证，但只是前端做了校验，后端压根就忘了这个小需求。那么后果来了如果一个懂的直接抓包去篡改你的接口，然后绕过校验，通过sql注入直接随意登录。如果你这是一个下单业务，是不是给公司造成了很大损失</p>
+<h3 id="接口的组成："><a href="#接口的组成：" class="headerlink" title="接口的组成："></a><strong>接口的组成：</strong></h3><p>a、接口说明</p>
+<p>b、调用url（请求的地址）</p>
+<p>c、请求方法（get\post）</p>
+<ul>
+<li><p>GET提交的数据显示在地址栏，不安全;提交的数据量有限制;不重要的数据使用GET</p>
+</li>
+<li><p>POST隐式提交数据，更安全;没有数据量大小的限制;重要数据使用POST</p>
+</li>
+</ul>
+<p>d、请求参数、参数类型、请求参数说明</p>
+<p>e、返回参数说明</p>
+<img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720210113729.png" alt="image-20210720210113729" style="zoom:33%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210720210243222.png" alt="image-20210720210243222" style="zoom:50%;" />
+
+<h3 id="怎么测："><a href="#怎么测：" class="headerlink" title="怎么测："></a><strong>怎么测：</strong></h3><p>A. 用例设计（根据业务逻辑来设计用例，登录5次，需要2分钟后再登录 删除关注的车，列表少一条数据）</p>
+<p>B. 参数组合（传入不同值）</p>
+<p>C. 接口安全（绕过验证&#x2F;绕过身份验证&#x2F;参数是否加密等）</p>
+<p>D. 异常验证（输入异常参数边界值）</p>
+<h3 id="用什么工具测"><a href="#用什么工具测" class="headerlink" title="用什么工具测"></a><strong>用什么工具测</strong></h3><p>功能：Postman&#x2F;HTTPrequest&#x2F;jemter</p>
+<p>自动化：restassured&#x2F; <a target="_blank" rel="noopener" href="http://www.elecfans.com/tags/python/">python</a> httprequest</p>
+<h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><h3 id="什么是性能测试？"><a href="#什么是性能测试？" class="headerlink" title="什么是性能测试？"></a><strong>什么是性能测试？</strong></h3><p>性能测试，顾名思义，就是测试软件性能方面的质量，它是一种非功能性的测试。</p>
+<p>在整个测试中，应用程序的性能在预期的或更高的负载下进行评估。评估系统的不同性能属性，如<strong>响应时间</strong>（速度）、<strong>吞吐量</strong>、可靠性、<strong>资源使用率</strong>、可扩展性等。<strong>监控系统的各项指标，是否符合需求</strong>，如果不符合，就发现了系统的性能瓶颈</p>
+<h3 id="性能测试的分类（负载、压力、容量、并发、配置、可靠性持久性"><a href="#性能测试的分类（负载、压力、容量、并发、配置、可靠性持久性" class="headerlink" title="性能测试的分类（负载、压力、容量、并发、配置、可靠性持久性"></a>性能测试的分类（负载、压力、容量、并发、配置、可靠性持久性</h3><ul>
+<li><p><strong>负载测试：</strong>通过在被测系统上不断加压（如逐渐增加模拟用户的数量），直到性能指标达到极限，<strong>来观察不同负载下系统的响应时间和数据吞吐量、系统占用的资源（如CPU、内存）等</strong>。</p>
+<ul>
+<li>看你在什么时候已经超出“需求”或系统崩溃。</li>
+<li>以检验系统的行为和特性，以发现系统可能存在的性能瓶颈、内存泄漏、不能实时同步等问题。负载测试更多地体现了一种方法或一种技术。</li>
+<li>这种性能测试方法需要在给定的测试环境下进行，<strong>通常也需要考虑被测试系统的业务压力量和典型场景</strong>、使得测试结果具有业务上的意义。</li>
+</ul>
+</li>
+<li><p><strong>压力测试：</strong>系统在强负载（大数据量、大量并发用户等）下的测试，例如cpu、内存在饱和使用情况下，看系统在峰值使用情况下是否稳定，看系统处理的会话能力以及哪里会出问题。</p>
+<ul>
+<li>从而有效地发现系统的某项功能隐患、系统是否具有良好的容错能力和可恢复能力。</li>
+</ul>
+</li>
+<li><p><strong>容量测试：</strong>通过测试预先分析出系统<strong>某项指标的极限值</strong>（如最大并发用户数、数据库记录数等）</p>
+<ul>
+<li><p>容量测试是面向数据的，并且它的目的是显示系统可以处理目标内确定的数据容量</p>
+<ul>
+<li><p><strong>例：一个人背X斤。</strong></p>
+<p><strong>负载测试：</strong>200斤情况下，是否能坚持5分钟。</p>
+<p><strong>压力测试：</strong>200,300,400… 斤情况下，他的表现，什么时候失败，失败之后什么表现，重新扛200是否正常。</p>
+<p><strong>容量测试：</strong>在坚持5分钟的情况下，他一次最多能扛多少斤。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>并发测试：</strong>模拟多用户<strong>并发</strong>访问<strong>同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题</strong></p>
+</li>
+<li><p><strong>配置测试：</strong>通过对被测系统软硬件环境的调整，了解各种不同环境对系统性能影响的程度，从而找到系统各项资源的最优分配原则</p>
+<ul>
+<li>关注点是“微调”，通过对软硬件的不段调整，找出他们的最佳状态，使系统达到一个最强的状态。</li>
+</ul>
+</li>
+<li><p><strong>可靠性测试(持久性测试)：</strong>给系统施加一定的业务压力，让其持续运行一段时间，测试在这种条件下能否稳定运行。</p>
+<ul>
+<li>关注点是“稳定”，不需要给系统太大的压力，<strong>只要系统能够长期处于一个稳定的状态</strong>。</li>
+<li>通常可以测试出系统是否有内存泄露的问题。</li>
+</ul>
+</li>
+</ul>
+<h3 id="性能测试常用指标（并发数、响应时间、吞吐量、资源利用率"><a href="#性能测试常用指标（并发数、响应时间、吞吐量、资源利用率" class="headerlink" title="性能测试常用指标（并发数、响应时间、吞吐量、资源利用率"></a>性能测试常用指标（并发数、响应时间、吞吐量、资源利用率</h3><p>并发数</p>
+<ul>
+<li><strong>并发用户数</strong>：指同一时间点向系统提交请求的用户数</li>
+<li>在线用户数：某段时间内访问系统的用户数。这些用户并不一定同时向系统提交请求</li>
+<li>系统用户数: 系统注册的总用户数据</li>
+</ul>
+<p><strong>响应时间：</strong>用户发送一个请求到用户接收到服务器的响应数据这段时间</p>
+<ul>
+<li>响应时间&#x3D;网络传输(请求)时间+服务器处理(一层或多层)时间+网络传输(响应) 时间+页面前端解析渲染时间</li>
+</ul>
+<p><strong>吞吐量</strong>：一段时间内系统处理用户（客户端）请求的数量</p>
+<ul>
+<li>计算单位: 一般用请求数&#x2F;秒作为吞吐量的单位。从业务角度来说也可使用访问人数&#x2F;天，或者页面访问量&#x2F;天作为单位</li>
+<li>吞吐量逐渐达到饱和：意味着系统的一种或多种资源利用达到的极限。通常可以利用拐点来进行性能测试分析和定位</li>
+</ul>
+<p><strong>资源利用率：</strong>对不同系统资源的使用程度， 系统资源(CPU&#x2F;内存&#x2F;磁盘&#x2F;网络)使用占比(使用量&#x2F;总量*100%)</p>
+<ul>
+<li>利用率指标:(没有特殊要求情况下)<ul>
+<li>CPU 不超过 75%-85%</li>
+<li>内存不超过 80%</li>
+<li>硬盘不超过 90%(容量占有率&#x2F;读写时间比)</li>
+</ul>
+</li>
+</ul>
+<h4 id="常用服务器资源指标（CPU、内存、磁盘、网络、TPS、QPS、HPS、PV、UV"><a href="#常用服务器资源指标（CPU、内存、磁盘、网络、TPS、QPS、HPS、PV、UV" class="headerlink" title="常用服务器资源指标（CPU、内存、磁盘、网络、TPS、QPS、HPS、PV、UV"></a>常用服务器资源指标（CPU、内存、磁盘、网络、TPS、QPS、HPS、PV、UV</h4><p>CPU处理器、MEM内存(临时保存)、IO磁盘 (永久保存)、网络(带宽)</p>
+<img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210731223712119.png" alt="image-20210731223712119" style="zoom:55%;" />
+
+<p>车间中加工原料，当车间中没有原料了，在从仓库中取原料，对原料进行加工；</p>
+<p>内存本身有一定的存储空间，对内存中的数据进行处理的速度比从硬盘取数据再处理的速度快很多</p>
+<ul>
+<li><p>CPU指标主要指的CPU利用率，包括用户态(user)、系统态(sys)、等待态(wait)、空闲态(idle)。</p>
+</li>
+<li><p>内存是与CPU进行沟通的桥梁。<strong>计算机中所有程序的运行都是在内存中进行的</strong>，因此内存的性能对计算机的影响非常大</p>
+</li>
+<li><p><strong>CPU、MEM、IO之间的关系</strong><br>CPU对数据进行判断以及逻辑处理，本身不能存储数据；这时cpu从内存取数据进行逻辑计算，如果内存没有数据，才会从硬盘读数据到内存，再对数据进行处理。</p>
+<p>当cpu进程等待，会造成内存开销的增加，内存不够用的时候会用到虚拟内存，导致虚拟内存的增加，这时磁盘IO开销就会增加，系统态sy%提升，cpu开销增加；内存里数据不够用，才用磁盘中取数据。</p>
+</li>
+<li><p>网络吞吐量简称为Network Throughput，是指在无网络故障的情况下单位时间内通过的网络的数据数量。单位为Byte&#x2F;s。网络吞吐量指标主要有每秒有多少兆流量进出。</p>
+</li>
+<li><p><strong>TPS(Transactions Per Second,每秒事务数)</strong> ：是单位时间内处理事务的数量 </p>
+<ul>
+<li>从代码角度来说,一段代码或多段代码可以组成一个事务。单位时间内完成的事务数越多,服务器的性能越好</li>
+</ul>
+</li>
+<li><p>**QPS(Query Per Second,每秒查询数)**：QPS是单位时间内处理请求的数量</p>
+<ul>
+<li>比TPS划分的更细致一些，因为一个事务可能会包含多个请求。</li>
+</ul>
+</li>
+<li><p><strong>TPS(每秒事务数) 和 QPS(每秒查询数)区别:</strong></p>
+<ul>
+<li>TPS代表一个事务的处理，可以包含了多次请求</li>
+<li>TPS的一次事务代表一次用户操作到服务器返回结果，QPS的一次请求代表一个接口的一次请求到服务器返回结果。</li>
+<li>当一次用户操作只包含一个请求接口时，TPS和QPS没有区别。</li>
+<li>当用户的一次操作包含了多个服务请求时，这时候选TPS作为这次用户操作的性能指标更好。</li>
+<li>例如：访问一个页面会请求服务器30次，一次访问，产生一个“TPS”，产生30个“QPS”</li>
+</ul>
+</li>
+<li><p>**点击数HPS(每秒点击次数)**：是指发起请求时, 服务端 对请求 进行响应的页面资源 对应的请求数量</p>
+<ul>
+<li>每秒用户向web服务器提交的HTTP请求数，<strong>并非鼠标的一次单击操作，因为一次单击操作中，客户端可能向服务器发送多个HTTP请求</strong></li>
+</ul>
+</li>
+<li><p>**PV(Page View, 页面访问量)**：访问一个URL，产生一个PV</p>
+<ul>
+<li>每日每个网站的总PV量是形容一个网站规模的重要指标</li>
+</ul>
+</li>
+<li><p>**UV (Unique Visitor,用户访问量)**：作为一个独立的用户，访问站点的所有页面均算作一个UV</p>
+</li>
+</ul>
+<h3 id="性能测试的目的-为什么要进行性能测试？"><a href="#性能测试的目的-为什么要进行性能测试？" class="headerlink" title="性能测试的目的?为什么要进行性能测试？"></a><strong>性能测试的目的</strong>?<strong>为什么要进行性能测试？</strong></h3><p>识别系统的弱点，评估系统能力，发现系统性能瓶颈，提高系统可靠性能和稳定性</p>
+<p>进行性能测试主要是为了保障软件能够在期望的负载下运行良好，并且通过发现性能问题来消除应用程序的性能瓶颈。</p>
+<p>●<strong>提供系统速度的度量</strong>；这些测试有助于对参数进行基准测试，如度量应用程序速度的响应时间，我们都知道，这对于应用程序的成功至关重要。</p>
+<p><strong>●有助于评估应用程序的可扩展性；</strong>性能测试有助于检查应用程序是否有能力扩充更多的用户量。</p>
+<p><strong>●有助于检查应用程序的健壮性</strong>；通过压力测试，我们可以检查应用程序在工作负载高于预期或高于应用程序阈值时的稳健性。</p>
+<p><strong>●有助于检查应用程序的可靠性</strong>；进行不同类型的性能测试是为了检查应用程序是否可靠，是否提供了正确的和一致的输出。性能测试，如负载测试和耐久测试，有助于评估系统在预期的工作负载下的正确性。</p>
+<h2 id="测试报告的内容"><a href="#测试报告的内容" class="headerlink" title="测试报告的内容"></a>测试报告的内容</h2><p>软件测试报告的组成：</p>
+<p>一、概述<br>包括项目背景、需求分析</p>
+<p>二、测试时间 测试人员、测试环境（设备）</p>
+<p>投入了哪些人，用了多少时间，测试起止时间。</p>
+<p>用到哪些测试手机，什么客户端环境，什么浏览器等等。</p>
+<p>三、<strong>测试过程</strong><br>评审记录、测试内容、测试范围、测试用例</p>
+<p>四、功能实现清单<br>列出是否已经按照测试计划实现功能</p>
+<p>五、<strong>缺陷统计，缺陷分析</strong><br>测试缺陷统计；</p>
+<p>测试用例执行情况统计（一共多少，执行了多少，未执行多少，通过多少，失败多少）</p>
+<p>六、测试统计情况<br>资源统计、执行情况、问题统计、问题列表、遗留的问题</p>
+<p>七、<strong>测试总结</strong><br>测试结论；（是否通过）<br>测试内容、测试用例的覆盖程度、bug的解决程度</p>
+<p>八、测试风险</p>
+<h2 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h2><h3 id="Appium"><a href="#Appium" class="headerlink" title="Appium"></a>Appium</h3><p>appium 1. 13之后安卓上默认的工作原理：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210816122713727.png" alt="image-20210816122713727"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210816123515564.png" alt="image-20210816123515564"></p>
+<p><strong>appium的整体架构是C&#x2F;S模式，整体流程（返回顺序为逆向）：</strong></p>
+<p><strong>脚本请求 ——&gt; 4723端口appium server ——&gt; 解析参数给PC端4724端口 ——&gt; 发送给设备4724端口 ——&gt; 通过设备4724端口发给bootstrap.jar ——&gt; Bootstrap.jar把命令发给uiautomator</strong></p>
+<p>首先我们要开启appium服务，即Appium server，也就是在命令行用appium命令打开的东西，默认监听4723端口。4723端口专门和脚本打交道，基于WebDriver协议。</p>
+<p>client 创建1个session，在该session中通过http向appium server发送请求，appium server解析请求，完成相应操作并返回response。</p>
+<p>创建session成功之前，就已将bootstrap.jar放入手机中，并开启设备上的基于appium bootstrap的socket服务，绑定本机和boostrap通信的端口号4724用于和Android设备通讯，默认监听4724端口，等待client的连接。</p>
+<p>Appium server将脚本的请求解析后给到4724端口，通过设备的4724端口转发解析后的请求， 此时，对于socket服务来说，appium server就充当了client的角色，appium server通过4724端口主动去请求设备上的socket服务，即向socket服务发送请求，即bootstrap.jar，Bootstrap.jar再把Appium的命令转换成uiautomator的命令来让uiautomator进行处理。有请求就有返回，socket接收到请求后会做出响应，原路返回给脚本，然后脚本再进行下一次的请求。</p>
+<p>网络上的两个程序通过一个双向的通信连接实现数据的交换，这个连接的一端称为一个socket。appium和手机的通信过程,主要是数据交换的一个过程，socket的作用是就是为了实现双向通信，它需要一对端口号，对应到这里就是4724，手机端的bootstrap就是socket-server端，appium server就是socket-client端。</p>
+<p>关于socket的通信原理，先从服务器端说起。服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，这时客户端与服务器端的连接就建立了。客户端发送数据请求，服务器端接收请求并处理请求，然后把回应数据发送给客户端，客户端读取数据，最后关闭连接，一次交互结束。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210816113126948.png" alt="image-20210816113126948" style="zoom:50%;" /><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/image-20210816114420267.png" alt="image-20210816114420267" style="zoom: 33%;" /></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">xpt</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://xpt.hatake18.top/2022/02/09/QA_test/">https://xpt.hatake18.top/2022/02/09/QA_test/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xpt.hatake18.top" target="_blank">夏普通</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_test_cover_.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat_reward.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat_reward.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay_reward.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay_reward.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/08/QA_code/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_code_cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">面试QA整理(8)——常考编程题</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/10/Hexo_txy_CDN/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/Hexo_txy_CDN_cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo+Github.io 配置腾讯云CDN</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/xpt.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xpt</div><div class="author-info__description">wechat: is_xpt</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://xxxpt.blog.csdn.net/"><i class="fab fa-cuttlefish"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:namexiafan@foxmail.com" target="_blank" title="namexiafan@foxmail.com"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">菜单栏搜索可以搜文章标题及内容，最近在更新面试整理。博客正在逐步完善~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95QA%E6%95%B4%E7%90%86-9-%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-text">面试QA整理(9)——测试开发相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B%E2%80%94-%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-%EF%BC%88%E5%85%AD%E4%B8%AA%E9%98%B6%E6%AE%B5-%E8%AE%A1%E5%88%92-x2F-%E9%9C%80%E6%B1%82-x2F-%E8%AE%BE%E8%AE%A1-x2F-%E7%BC%96%E7%A0%81-x2F-%E6%B5%8B%E8%AF%95-x2F-%E8%BF%90%E8%A1%8C%E4%B8%8E%E7%BB%B4%E6%8A%A4"><span class="toc-text">测试流程—-软件生命周期 （六个阶段:计划&#x2F;需求&#x2F;设计&#x2F;编码&#x2F;测试&#x2F;运行与维护)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E3%80%81%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%E3%80%81%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E3%80%81%E9%AA%8C%E6%94%B6%E6%B5%8B%E8%AF%95-Alpha%E3%80%81Beta-%E3%80%81%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95"><span class="toc-text">单元测试、集成测试、系统测试、验收测试(Alpha、Beta)、回归测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E4%BD%A0%E5%88%86%E5%88%AB%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E3%80%81%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95%E3%80%81%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E3%80%81%E9%AA%8C%E6%94%B6%E6%B5%8B%E8%AF%95%E3%80%81%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95"><span class="toc-text">请你分别介绍一下单元测试、集成测试、系统测试、验收测试、回归测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-text">单元测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95"><span class="toc-text">集成测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95"><span class="toc-text">系统测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95"><span class="toc-text">回归测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E6%94%B6%E6%B5%8B%E8%AF%95"><span class="toc-text">验收测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Alpha%E6%B5%8B%E8%AF%95"><span class="toc-text">Alpha测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Beta%E6%B5%8B%E8%AF%95"><span class="toc-text">Beta测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E5%92%8C%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-text">黑盒测试和白盒测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E7%9B%92%E7%99%BD%E7%9B%92%E9%80%82%E5%90%88%E8%BF%90%E7%94%A8%E4%BA%8E%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF"><span class="toc-text">黑盒白盒适合运用于什么场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">黑盒测试与白盒测试优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%92%E7%83%9F%E6%B5%8B%E8%AF%95"><span class="toc-text">冒烟测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%98%86%E2%98%86%E2%98%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E2%98%86%E2%98%86%E2%98%86"><span class="toc-text">☆☆☆测试用例☆☆☆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E5%87%A0%E4%B8%AA%E6%96%B9%E9%9D%A2%E7%9C%8B%EF%BC%88%E5%8A%9F%E8%83%BD%E3%80%81%E7%95%8C%E9%9D%A2%E3%80%81%E6%80%A7%E8%83%BD%E3%80%81%E5%AE%89%E5%85%A8%E6%80%A7%E3%80%81%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">这几个方面看（功能、界面、性能、安全性、兼容性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#x3D-x3D-x3D-x3D-x3D-%E5%85%B7%E4%BD%93%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%8C%E8%A6%81%E8%AF%B4%E8%AF%A6%E7%BB%86%E3%80%82%E5%9C%A8%E6%B5%8B%E8%AF%95%E5%86%85%E5%AE%B9%E6%98%8E%E7%A1%AE%E7%9A%84%E5%9F%BA%E7%A1%80%E4%B8%8A%EF%BC%8C%E5%86%8D%E4%BB%8E%E6%B5%8B%E8%AF%95%E6%89%8B%E6%AE%B5%E4%B8%8A%E5%8E%BB%E8%BF%9B%E8%A1%8C%E8%80%83%E9%87%8F%EF%BC%8C%E6%89%8D%E6%98%AF%E6%AF%94%E8%BE%83%E5%85%A8%E9%9D%A2%E7%9A%84%E6%80%9D%E8%B7%AF-x3D-x3D-x3D-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;具体的例子，要说详细。在测试内容明确的基础上，再从测试手段上去进行考量，才是比较全面的思路&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90%E9%A3%9E%E4%B9%A6%E3%80%91%E8%A7%86%E9%A2%91%E4%BC%9A%E8%AE%AE%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">【飞书】视频会议测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%EF%BC%88%E7%9B%B4%E6%92%AD%E6%88%96%E6%92%AD%E6%94%BE"><span class="toc-text">视频直播测试用例（直播或播放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%EF%BC%88%E4%BE%8B%E5%A6%82%E5%BE%AE%E4%BF%A1%E7%AD%89APP%EF%BC%8C%E7%BD%91%E7%AB%99%E7%99%BB%E5%BD%95"><span class="toc-text">登录测试用例（例如微信等APP，网站登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E6%A1%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">百度搜索框测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E6%9C%8B%E5%8F%8B%E5%9C%88%E7%82%B9%E8%B5%9E%E6%B5%8B%E8%AF%95"><span class="toc-text">微信朋友圈点赞测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">微信视频通话测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%8F%91%E7%BA%A2%E5%8C%85%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">微信发红包测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E8%AF%84%E8%AE%BA%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%EF%BC%88%E8%AE%BA%E5%9D%9B%E8%AF%84%E8%AE%BA%E3%80%81%E6%8A%96%E9%9F%B3%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-text">微信评论测试用例（论坛评论、抖音评论功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BE%8B%E5%A6%82%E6%B7%98%E5%AE%9D%E3%80%81%E6%B7%98%E5%AE%9D%E7%BB%93%E8%B4%A6%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">购物车测试（例如淘宝、淘宝结账测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%98%E5%AE%9D%E6%90%9C%E7%B4%A2%E6%A1%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">淘宝搜索框测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%88%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%EF%BC%8C%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%EF%BC%8C%E9%93%B6%E8%A1%8C%E5%8D%A1%E6%94%AF%E4%BB%98%E7%AD%89"><span class="toc-text">支付功能测试（支付宝支付，微信支付，银行卡支付等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BD%AC%E8%B4%A6%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">支付宝转账测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#x3D-x3D-x3D-x3D-x3D-%E5%AE%9E%E7%89%A9%E7%B1%BB%E6%B5%8B%E8%AF%95-x3D-x3D-x3D-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;实物类测试&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%94%AE%E8%B4%A7%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">自动售货机测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E6%9D%AF%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%EF%BC%88%E4%B8%80%E6%AC%A1%E6%80%A7%E5%92%96%E5%95%A1%E6%9D%AF%E3%80%81%E7%BA%B8%E6%9D%AF%E7%AD%89%E7%AD%89"><span class="toc-text">水杯测试用例（一次性咖啡杯、纸杯等等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%BF%E6%B3%89%E6%B0%B4%E7%93%B6%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">矿泉水瓶测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">一个网站测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#App%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">App测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%8F%A3%E7%BD%A9%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">一个口罩测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%97%E8%A1%A3%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">洗衣机测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%A2%AF%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">电梯测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%ADIP%E5%9C%B0%E5%9D%80%E6%98%AF%E5%90%A6%E5%90%88%E6%B3%95%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">判断IP地址是否合法的测试用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F"><span class="toc-text">测试人脸识别系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%98%86%E2%98%86%E2%98%86%E5%AE%9A%E4%BD%8Dbug%E3%80%81%E5%AE%9A%E4%BD%8D%E5%89%8D%E5%90%8E%E7%AB%AF%E9%97%AE%E9%A2%98%E2%98%86%E2%98%86%E2%98%86"><span class="toc-text">☆☆☆定位bug、定位前后端问题☆☆☆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E8%B4%AD%E4%B9%B0%E5%90%8E%EF%BC%8C%E6%9F%A5%E7%9C%8B%E8%AE%A2%E5%8D%95%E6%9C%89%E5%95%86%E5%93%81%E6%B2%A1%E6%9C%89%E6%98%BE%E7%A4%BA%E5%87%BA%E6%9D%A5"><span class="toc-text">成功购买后，查看订单有商品没有显示出来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E5%87%BA%E7%8E%B0%E5%8A%A0%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6%E5%95%86%E5%93%81%EF%BC%8C%E5%86%8D%E7%BB%93%E8%B4%A6%E6%97%B6%E4%B8%8D%E6%AD%A3%E7%A1%AE%EF%BC%8C%E6%80%8E%E4%B9%88%E5%AE%9A%E4%BD%8D%E5%BC%82%E5%B8%B8%EF%BC%9F"><span class="toc-text">如果出现加入购物车商品，再结账时不正确，怎么定位异常？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9CA%E7%BB%99B%E8%AF%84%E8%AE%BA%E4%BA%86%E4%BD%86%E6%98%AF%E6%B2%A1%E6%98%BE%E7%A4%BA%E5%8F%AF%E8%83%BD%E6%98%AF%E4%BB%80%E4%B9%88%E5%8E%9F%E5%9B%A0%E9%80%A0%E6%88%90%E7%9A%84%EF%BC%88%E4%BE%8B%E5%A6%82%E5%BE%AE%E4%BF%A1%E8%AF%84%E8%AE%BA%EF%BC%89"><span class="toc-text">如果A给B评论了但是没显示可能是什么原因造成的（例如微信评论）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E4%B8%8D%E8%83%BD%E6%92%AD%E6%94%BE%E4%BA%86%EF%BC%8C%E5%AE%9A%E4%BD%8D%E9%94%99%E8%AF%AF"><span class="toc-text">视频不能播放了，定位错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%88%B7%E4%B8%8D%E5%87%BA%E6%9D%A5%E4%BA%86%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5"><span class="toc-text">朋友圈刷不出来了怎么排查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E8%B4%AD%E4%B9%B0%E5%90%8E%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E4%B8%8D%E5%87%BA%E6%9D%A5%EF%BC%8C%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%EF%BC%9F"><span class="toc-text">点击购买后页面加载不出来，怎么排查？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E6%8A%A2%E7%BA%A2%E5%8C%85%E6%B5%8B%E8%AF%95%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%8C%89%E9%92%AE%E5%A4%B1%E7%81%B5%E6%80%8E%E4%B9%88%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98"><span class="toc-text">微信抢红包测试，如果按钮失灵怎么定位问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E7%94%A8%E6%88%B7%E5%8F%8D%E5%BA%94%E9%82%80%E8%AF%B7%E5%A5%BD%E5%8F%8B%E7%BB%99%E5%A5%B9%E7%A0%8D%E4%B8%80%E5%88%80%E6%B2%A1%E6%9C%89%E6%88%90%E5%8A%9F%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5"><span class="toc-text">有用户反应邀请好友给她砍一刀没有成功怎么排查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%8F%8D%E6%98%A0%E4%BD%A0%E5%BC%80%E5%8F%91%E7%9A%84%E7%BD%91%E7%AB%99%E8%AE%BF%E9%97%AE%E5%BE%88%E6%85%A2%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%98%AF%E4%BB%80%E4%B9%88%E5%8E%9F%E5%9B%A0%E3%80%82"><span class="toc-text">用户反映你开发的网站访问很慢可能会是什么原因。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E4%B8%8D%E5%BC%80%E6%98%AF%E4%BB%80%E4%B9%88%E5%8E%9F%E5%9B%A0%EF%BC%9F%EF%BC%88%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%EF%BC%8C%E4%BD%86%E6%98%AF%E6%B2%A1%E6%9C%89%E8%AE%BF%E9%97%AE%E5%88%B0%E9%A2%84%E6%9C%9F%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-text">浏览器打不开是什么原因？（输入一个URL，但是没有访问到预期的网站</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">接口测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%EF%BC%88%E6%94%AF%E4%BB%98%E4%B8%BA%E4%BE%8B"><span class="toc-text">接口测试用例设计思路（支付为例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">什么是接口测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%81%9A%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95"><span class="toc-text">为什么要做接口测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BB%84%E6%88%90%EF%BC%9A"><span class="toc-text">接口的组成：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E6%B5%8B%EF%BC%9A"><span class="toc-text">怎么测：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BB%80%E4%B9%88%E5%B7%A5%E5%85%B7%E6%B5%8B"><span class="toc-text">用什么工具测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">性能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="toc-text">什么是性能测试？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%88%E8%B4%9F%E8%BD%BD%E3%80%81%E5%8E%8B%E5%8A%9B%E3%80%81%E5%AE%B9%E9%87%8F%E3%80%81%E5%B9%B6%E5%8F%91%E3%80%81%E9%85%8D%E7%BD%AE%E3%80%81%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%8C%81%E4%B9%85%E6%80%A7"><span class="toc-text">性能测试的分类（负载、压力、容量、并发、配置、可靠性持久性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%B8%B8%E7%94%A8%E6%8C%87%E6%A0%87%EF%BC%88%E5%B9%B6%E5%8F%91%E6%95%B0%E3%80%81%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F%E3%80%81%E8%B5%84%E6%BA%90%E5%88%A9%E7%94%A8%E7%8E%87"><span class="toc-text">性能测试常用指标（并发数、响应时间、吞吐量、资源利用率</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B5%84%E6%BA%90%E6%8C%87%E6%A0%87%EF%BC%88CPU%E3%80%81%E5%86%85%E5%AD%98%E3%80%81%E7%A3%81%E7%9B%98%E3%80%81%E7%BD%91%E7%BB%9C%E3%80%81TPS%E3%80%81QPS%E3%80%81HPS%E3%80%81PV%E3%80%81UV"><span class="toc-text">常用服务器资源指标（CPU、内存、磁盘、网络、TPS、QPS、HPS、PV、UV</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%9A%84%E7%9B%AE%E7%9A%84-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%BF%9B%E8%A1%8C%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="toc-text">性能测试的目的?为什么要进行性能测试？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-text">测试报告的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6"><span class="toc-text">测试框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Appium"><span class="toc-text">Appium</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/10/Hexo_txy_CDN/" title="Hexo+Github.io 配置腾讯云CDN"><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/Hexo_txy_CDN_cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+Github.io 配置腾讯云CDN"/></a><div class="content"><a class="title" href="/2022/02/10/Hexo_txy_CDN/" title="Hexo+Github.io 配置腾讯云CDN">Hexo+Github.io 配置腾讯云CDN</a><time datetime="2022-02-10T03:30:00.000Z" title="发表于 2022-02-10 11:30:00">2022-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/09/QA_test/" title="面试QA整理(9)——测试开发相关知识"><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_test_cover_.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试QA整理(9)——测试开发相关知识"/></a><div class="content"><a class="title" href="/2022/02/09/QA_test/" title="面试QA整理(9)——测试开发相关知识">面试QA整理(9)——测试开发相关知识</a><time datetime="2022-02-09T03:30:00.000Z" title="发表于 2022-02-09 11:30:00">2022-02-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/08/QA_code/" title="面试QA整理(8)——常考编程题"><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_code_cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试QA整理(8)——常考编程题"/></a><div class="content"><a class="title" href="/2022/02/08/QA_code/" title="面试QA整理(8)——常考编程题">面试QA整理(8)——常考编程题</a><time datetime="2022-02-08T03:30:00.000Z" title="发表于 2022-02-08 11:30:00">2022-02-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/07/QA_linux/" title="面试QA整理(7)——linux"><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_linux_cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试QA整理(7)——linux"/></a><div class="content"><a class="title" href="/2022/02/07/QA_linux/" title="面试QA整理(7)——linux">面试QA整理(7)——linux</a><time datetime="2022-02-07T03:30:00.000Z" title="发表于 2022-02-07 11:30:00">2022-02-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/06/QA_java/" title="面试QA整理(6)——java"><img src="https://cdn.jsdelivr.net/gh/xxpt/Blog-photo/interviewQA/QA_java_cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试QA整理(6)——java"/></a><div class="content"><a class="title" href="/2022/02/06/QA_java/" title="面试QA整理(6)——java">面试QA整理(6)——java</a><time datetime="2022-02-06T03:30:00.000Z" title="发表于 2022-02-06 11:30:00">2022-02-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By xpt</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'pO1KsEpccyt4dWMrhqlARlKB-gzGzoHsz',
+      appKey: 'tlUclKHXgsPbWNYvnmqg7YQE',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/xpt.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="多发paper,少掉头发,offer多多,升职加薪,健康快乐" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="/%5Bobject%20Object%5D"></script></div></body></html>
